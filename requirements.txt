@@ -1,0 +1,24 @@
+# Core dependencies for Sasso Digitale servers
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# Codex Server dependencies
+# Note: Install anti_porn_framework separately: pip install -e ./anti_porn_framework
+
+# LLM API clients (for Grok, Gemini, Claude integration)
+openai>=1.0.0  # Compatible with xAI Grok API
+google-generativeai>=0.3.0  # Google Gemini API
+anthropic>=0.25.0  # Anthropic Claude API
+
+# Optional: for image generation (Codex Server)
+# Uncomment to enable image generation feature:
+# torch>=2.0.0
+# diffusers>=0.21.0
+# transformers>=4.30.0
+# accelerate>=0.20.0
+# safetensors>=0.3.0
+
+# Optional: for development
+pytest>=7.4.0
+httpx>=0.25.0
