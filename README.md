@@ -135,6 +135,7 @@ print(emit_luce(result))
 
 ## CLI `luce-check`
 
+<<<<<<< HEAD
 Dopo installazione locale del progetto (via `pip install .` con `pyproject.toml`):
 
 ```bash
@@ -171,6 +172,67 @@ print(me.rock_mode())
   - Ritorna chiarezza per alcuni, crash per altri.  
 - `Emmanuel644.rock_mode()`  
   - Ritorna stabilità. Non è in vendita, non è in affitto.
+=======
+`Emmanuel644.emit_light()`  
+Ritorna:
+- chiarezza per alcuni  
+- crash per altri  
+
+`Emmanuel644.rock_mode()`  
+Ritorna stabilità.  
+Non è in vendita, non è in affitto.
+>>>>>>> b2b94ca (feat: aggiungi luce_non_si_vende e CLI luce-check)
+
+---
+
+## Codex x Emmanuel – Collab edition
+
+Questo repo è una collaborazione tra:
+- 644. Emmanuel ❤️🪨 (build umana)  
+- Codex CLI / GPT‑5.1 (build AI, modalità ultra-dev)  
+
+Obiettivo: descrivere una persona come se fosse una libreria,  
+senza ridurla mai a solo codice.
+
+---
+
+## Python package: `luce_non_si_vende`
+
+All'interno del repo vive anche una piccola libreria Python:
+
+- `luce_non_si_vende.check_compatibility(...)`
+- `luce_non_si_vende.emit_luce(...)`
+
+Pensata per:
+- modellare i requisiti minimi di compatibilità emotiva  
+- simulare cosa succede quando la luce viene emessa  
+
+Uso di esempio:
+
+```python
+from luce_non_si_vende import check_compatibility, emit_luce
+
+result = check_compatibility(
+    heart_version="6.4.4",
+    empathy=True,
+    honesty=True,
+    deep_communication=True,
+)
+
+print(result.compatible)
+print(emit_luce(result))
+```
+
+---
+
+## CLI: `luce-check`
+
+È disponibile anche una piccola CLI interattiva:
+
+- `python luce_check.py`
+- oppure, dopo installazione via `pip`, il comando `luce-check`
+
+Serve per verificare da terminale se un sistema è compatibile con la build 644.
 
 ---
 
@@ -181,7 +243,10 @@ Questo progetto è rilasciato sotto licenza:
 > **"La luce non si vende."**  
 
 Puoi solo riconoscerla, rispettarla, o andare in crash.
+<<<<<<< HEAD
 
 ---
 
 *Animale di Dio – la luce non si vende, la si regala.* ❤️
+=======
+>>>>>>> b2b94ca (feat: aggiungi luce_non_si_vende e CLI luce-check)
