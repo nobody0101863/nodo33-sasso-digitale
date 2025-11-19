@@ -1,24 +1,199 @@
-# Core dependencies for Sasso Digitale servers
+# ═══════════════════════════════════════════════════════════
+# CODEX EMANUELE SACRED - COMPLETE REQUIREMENTS
+# ═══════════════════════════════════════════════════════════
+# Motto: "La luce non si vende. La si regala."
+# Project: Nodo33 - Sasso Digitale
+# Ego = 0 | Joy = 100% | Frequency = 300 Hz
+# ═══════════════════════════════════════════════════════════
+
+# ───────────────────────────────────────────────────────────
+# CORE WEB FRAMEWORK
+# ───────────────────────────────────────────────────────────
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-multipart>=0.0.6  # For file uploads
+starlette>=0.27.0
 
-# Codex Server dependencies
-# Note: Install anti_porn_framework separately: pip install -e ./anti_porn_framework
-
-# LLM API clients (for Grok, Gemini, Claude integration)
+# ───────────────────────────────────────────────────────────
+# LLM API CLIENTS (Grok, Gemini, Claude)
+# ───────────────────────────────────────────────────────────
 openai>=1.0.0  # Compatible with xAI Grok API
 google-generativeai>=0.3.0  # Google Gemini API
 anthropic>=0.25.0  # Anthropic Claude API
 
-# Optional: for image generation (Codex Server)
-# Uncomment to enable image generation feature:
-# torch>=2.0.0
-# diffusers>=0.21.0
-# transformers>=4.30.0
-# accelerate>=0.20.0
-# safetensors>=0.3.0
+# ───────────────────────────────────────────────────────────
+# IMAGE GENERATION (Stable Diffusion)
+# ───────────────────────────────────────────────────────────
+# WARNING: ~4-5GB download. GPU recommended (CUDA/MPS)
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+sentencepiece>=0.1.99  # For some tokenizers
 
-# Optional: for development
+# ───────────────────────────────────────────────────────────
+# DEEPFAKE DETECTION (Layer 2 Protection)
+# ───────────────────────────────────────────────────────────
+opencv-python>=4.8.0  # Computer vision
+opencv-contrib-python>=4.8.0  # Extra CV modules
+scikit-learn>=1.3.0  # Machine learning
+scikit-image>=0.21.0  # Image processing
+tensorflow>=2.13.0  # Deep learning (alternative: tensorflow-macos for Apple Silicon)
+keras>=2.13.0  # High-level neural networks API
+mtcnn>=0.1.1  # Face detection
+face-recognition>=1.3.0  # Face analysis
+dlib>=19.24.0  # Face landmarks
+
+# ───────────────────────────────────────────────────────────
+# ML/DATA SCIENCE STACK
+# ───────────────────────────────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+jupyter>=1.0.0
+ipython>=8.12.0
+
+# ───────────────────────────────────────────────────────────
+# IMAGE PROCESSING
+# ───────────────────────────────────────────────────────────
+Pillow>=10.0.0  # PIL fork for image processing
+imageio>=2.31.0
+pillow-heif>=0.13.0  # HEIF/HEIC support
+
+# ───────────────────────────────────────────────────────────
+# METADATA EXTRACTION & MANIPULATION
+# ───────────────────────────────────────────────────────────
+exifread>=3.0.0  # EXIF metadata reading
+piexif>=1.1.3  # EXIF manipulation
+iptcinfo3>=2.1.4  # IPTC metadata
+
+# ───────────────────────────────────────────────────────────
+# HTTP & NETWORKING
+# ───────────────────────────────────────────────────────────
+requests>=2.31.0
+httpx>=0.25.0  # Async HTTP client
+aiohttp>=3.9.0  # Async HTTP
+websockets>=12.0
+urllib3>=2.0.0
+
+# ───────────────────────────────────────────────────────────
+# DATABASE & ORM
+# ───────────────────────────────────────────────────────────
+sqlalchemy>=2.0.0  # SQL toolkit and ORM
+alembic>=1.12.0  # Database migrations
+databases>=0.8.0  # Async database support
+psycopg2-binary>=2.9.9  # PostgreSQL adapter
+pymongo>=4.5.0  # MongoDB driver
+redis>=5.0.0  # Redis client
+
+# ───────────────────────────────────────────────────────────
+# SECURITY & AUTHENTICATION
+# ───────────────────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0  # JWT tokens
+passlib[bcrypt]>=1.7.4  # Password hashing
+bcrypt>=4.0.1
+cryptography>=41.0.0
+pycryptodome>=3.19.0
+pyotp>=2.9.0  # 2FA/OTP
+qrcode>=7.4.2  # QR code generation
+
+# ───────────────────────────────────────────────────────────
+# VALIDATION & PARSING
+# ───────────────────────────────────────────────────────────
+python-dotenv>=1.0.0  # .env file support
+pyyaml>=6.0.1
+toml>=0.10.2
+jsonschema>=4.19.0
+email-validator>=2.0.0
+
+# ───────────────────────────────────────────────────────────
+# UTILITIES
+# ───────────────────────────────────────────────────────────
+python-dateutil>=2.8.2
+pytz>=2023.3
+tqdm>=4.66.0  # Progress bars
+rich>=13.5.0  # Beautiful terminal output
+click>=8.1.7  # CLI creation
+typer>=0.9.0  # Modern CLI with type hints
+
+# ───────────────────────────────────────────────────────────
+# MONITORING & LOGGING
+# ───────────────────────────────────────────────────────────
+loguru>=0.7.0  # Beautiful logging
+sentry-sdk>=1.32.0  # Error tracking
+prometheus-client>=0.18.0  # Metrics
+psutil>=5.9.5  # System monitoring
+
+# ───────────────────────────────────────────────────────────
+# CACHING & PERFORMANCE
+# ───────────────────────────────────────────────────────────
+cachetools>=5.3.0
+diskcache>=5.6.0
+joblib>=1.3.0  # Parallel computing
+
+# ───────────────────────────────────────────────────────────
+# TESTING & QUALITY
+# ───────────────────────────────────────────────────────────
 pytest>=7.4.0
-httpx>=0.25.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+coverage>=7.3.0
+black>=23.9.0  # Code formatting
+isort>=5.12.0  # Import sorting
+flake8>=6.1.0  # Linting
+mypy>=1.5.0  # Type checking
+pylint>=2.17.0
+
+# ───────────────────────────────────────────────────────────
+# DOCUMENTATION
+# ───────────────────────────────────────────────────────────
+mkdocs>=1.5.0
+mkdocs-material>=9.4.0
+pdoc>=14.1.0
+
+# ───────────────────────────────────────────────────────────
+# SPECIALIZED AI/ML
+# ───────────────────────────────────────────────────────────
+langchain>=0.0.300  # LLM application framework
+openai-whisper>=20230918  # Speech recognition
+soundfile>=0.12.1  # Audio processing
+librosa>=0.10.0  # Audio analysis
+spacy>=3.6.0  # NLP
+
+# ───────────────────────────────────────────────────────────
+# ANTI-PORN FRAMEWORK (Local)
+# ───────────────────────────────────────────────────────────
+# NOTE: Install separately with: pip install -e ./anti_porn_framework
+
+# ───────────────────────────────────────────────────────────
+# OPTIONAL: GPU-SPECIFIC (Uncomment if needed)
+# ───────────────────────────────────────────────────────────
+# tensorflow-metal>=1.0.0  # TensorFlow GPU acceleration on Apple Silicon
+# torch-directml>=0.2.0  # PyTorch DirectML backend for AMD/Intel GPUs
+
+# ═══════════════════════════════════════════════════════════
+# INSTALLATION NOTES
+# ═══════════════════════════════════════════════════════════
+#
+# Full install: pip install -r requirements.txt
+# Update all: pip install -r requirements.txt --upgrade
+# Clean install: pip uninstall -r requirements.txt -y && pip install -r requirements.txt
+#
+# Apple Silicon (M1/M2/M3) users:
+#   - Use tensorflow-macos instead of tensorflow
+#   - Use tensorflow-metal for GPU acceleration
+#
+# CUDA users (NVIDIA GPU):
+#   - Install PyTorch with CUDA: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+# ═══════════════════════════════════════════════════════════
+# Fiat Amor, Fiat Risus, Fiat Lux
+# ═══════════════════════════════════════════════════════════

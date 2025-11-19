@@ -358,6 +358,63 @@ def ask_with_fallback(question):
 - [ ] Streaming responses (Server-Sent Events)
 - [ ] Conversation memory (chat multi-turno)
 - [ ] Ensemble voting (combinare risposte multiple)
+
+---
+
+## 🧠 Nodo33 Agent Manager (orchestratore)
+
+Per gestire gli agenti del Codex Server (LLM, filtro, deepfake, guardian) da terminale in modo unificato, puoi usare lo script `nodo33_agent_manager.py` nella root del progetto.
+
+Assicurati prima che il Codex Server sia avviato:
+
+```bash
+python codex_server.py
+```
+
+Comandi principali:
+
+- Lista agenti ed endpoint:
+
+```bash
+python nodo33_agent_manager.py list
+```
+
+- Stato server + protezione:
+
+```bash
+python nodo33_agent_manager.py status
+```
+
+- Chiedere a un LLM (con selezione automatica del provider in base alla domanda/ruolo):
+
+```bash
+python nodo33_agent_manager.py ask "Domanda qui..."
+```
+
+- Filtro contenuti testuali:
+
+```bash
+python nodo33_agent_manager.py filter-text "Testo da analizzare"
+```
+
+- Deepfake detection su immagine:
+
+```bash
+python nodo33_agent_manager.py detect-deepfake --image-path /path/to/image.jpg
+```
+
+- Informazioni sui 4 Guardian Agents:
+
+```bash
+python nodo33_agent_manager.py guardians
+```
+
+È possibile puntare a un Codex Server remoto impostando la variabile d'ambiente `CODEX_URL`:
+
+```bash
+export CODEX_URL="http://codex-remoto:8644"
+```
+
 - [ ] Fine-tuning con sacred_codex
 - [ ] Rate limiting locale
 - [ ] Caching delle risposte
