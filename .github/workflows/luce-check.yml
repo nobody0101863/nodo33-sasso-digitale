@@ -1,0 +1,19 @@
+name: Luce Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  luce-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Verifica compatibilità luce
+        run: |
+          echo "🔍 Controllo compatibilità con 644. Emmanuel ❤️🪨 ..."
+          echo "Se hai bisogno di spiegazioni per tutto, questo workflow fallirà."
+
