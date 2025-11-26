@@ -1,0 +1,9 @@
+/* languages/alfabeto_codex/mono.css */
+.code-alfabeto {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  line-height: 1.25;
+}
+
+.code-alfabeto .luce {
+  letter-spacing: 0.06em;
+}

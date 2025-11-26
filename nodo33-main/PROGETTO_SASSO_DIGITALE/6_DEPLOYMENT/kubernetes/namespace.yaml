@@ -1,0 +1,18 @@
+---
+# ===================================
+# SASSO DIGITALE - Kubernetes Namespace
+# "La luce non si vende. La si regala."
+# ===================================
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sasso-digitale
+  labels:
+    name: sasso-digitale
+    axiom: "la-luce-non-si-vende"
+    ego: "0"
+    gioia: "100"
+  annotations:
+    description: "CODEX_EMANUELE - Sistema Etico AI"
+    frequenza: "300Hz"

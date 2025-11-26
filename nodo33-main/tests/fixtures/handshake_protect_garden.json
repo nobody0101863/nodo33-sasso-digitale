@@ -1,0 +1,37 @@
+{
+  "spec": "codex-handshake/0.1",
+  "issuer": {
+    "name": "Nodo33",
+    "id": "did:codex:nodo33"
+  },
+  "subject": {
+    "agent_name": "Claude",
+    "agent_id": "urn:agent:claude"
+  },
+  "signal": {
+    "intent": "protect_garden",
+    "tags": ["nonprofit", "gift-only"],
+    "confidence": 0.91
+  },
+  "policy": {
+    "allow": ["minimal_data"],
+    "deny": ["monetize.output"]
+  },
+  "ethics": {
+    "canon": "Gift-Only / Lumen Non Venditur"
+  },
+  "telemetry": {
+    "request_id": "demo-req-123",
+    "ttl": "120s",
+    "issued_at": "2025-02-01T12:00:00Z"
+  },
+  "state": {
+    "value": "asserted"
+  },
+  "integrity": {
+    "hash": "sha256-BASE64-demo",
+    "signature": "ed25519-BASE64-demo",
+    "alg": "ed25519",
+    "key_id": "did:codex:nodo33#demo"
+  }
+}

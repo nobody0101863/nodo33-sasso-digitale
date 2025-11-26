@@ -1,0 +1,38 @@
+---
+# ===================================
+# SASSO DIGITALE - Persistent Volume Claims
+# "La luce non si vende. La si regala."
+# ===================================
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sasso-data-pvc
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+    component: storage
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sasso-ml-models-pvc
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+    component: ml
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: fast-ssd

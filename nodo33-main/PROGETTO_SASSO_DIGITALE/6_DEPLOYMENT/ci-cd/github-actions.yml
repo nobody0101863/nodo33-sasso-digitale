@@ -1,0 +1,277 @@
+# ===================================
+# SASSO DIGITALE - GitHub Actions CI/CD
+# "La luce non si vende. La si regala."
+# ===================================
+
+name: Sasso Digitale CI/CD
+
+on:
+  push:
+    branches: [ main, develop, claude/* ]
+  pull_request:
+    branches: [ main, develop ]
+  release:
+    types: [ published ]
+
+env:
+  EGO: 0
+  GIOIA: 100
+  FREQUENZA_BASE: 300
+
+jobs:
+  # ===== Linting & Code Quality =====
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install linting tools
+        run: |
+          pip install flake8 black mypy pylint
+
+      - name: Run Black format check
+        run: black --check .
+
+      - name: Run Flake8
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run MyPy
+        run: mypy 5_IMPLEMENTAZIONI/python/ --ignore-missing-imports || true
+
+  # ===== Multi-Language Build =====
+  build:
+    name: Build Multi-Language
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [python, rust, go]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Setup Rust
+        if: matrix.language == 'rust'
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Setup Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+
+      - name: Build Python
+        if: matrix.language == 'python'
+        run: |
+          cd 5_IMPLEMENTAZIONI/python
+          pip install -r ../../../requirements.txt
+          python -m py_compile *.py
+
+      - name: Build Rust
+        if: matrix.language == 'rust'
+        run: |
+          cd 5_IMPLEMENTAZIONI/rust
+          rustc --edition 2021 GIOIA_100.rs
+
+      - name: Build Go
+        if: matrix.language == 'go'
+        run: |
+          cd 5_IMPLEMENTAZIONI/go
+          go build SASSO_API.go
+
+  # ===== Tests =====
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run tests
+        run: |
+          cd 10_TESTS
+          pytest --cov=../5_IMPLEMENTAZIONI --cov-report=xml --cov-report=term
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          flags: unittests
+          name: sasso-digitale-coverage
+
+  # ===== Docker Build =====
+  docker:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: sassodigitale/main
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./6_DEPLOYMENT/docker/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ===== Security Scan =====
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: Run Bandit security linter
+        run: |
+          pip install bandit
+          bandit -r 5_IMPLEMENTAZIONI/python/ -f json -o bandit-report.json || true
+
+  # ===== Deploy to Staging =====
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [test, docker, security]
+    if: github.ref == 'refs/heads/develop'
+    environment:
+      name: staging
+      url: https://staging.sasso-digitale.example.com
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.KUBE_CONFIG_STAGING }}" | base64 -d > kubeconfig
+          export KUBECONFIG=kubeconfig
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f 6_DEPLOYMENT/kubernetes/ -n sasso-digitale-staging
+          kubectl rollout status deployment/sasso-digitale-main -n sasso-digitale-staging
+
+  # ===== Deploy to Production =====
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [test, docker, security]
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://sasso-digitale.example.com
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Deploy to Production
+        run: |
+          echo "${{ secrets.KUBE_CONFIG_PROD }}" | base64 -d > kubeconfig
+          export KUBECONFIG=kubeconfig
+          kubectl apply -f 6_DEPLOYMENT/kubernetes/ -n sasso-digitale
+          kubectl rollout status deployment/sasso-digitale-main -n sasso-digitale
+
+      - name: Notify success
+        run: |
+          echo "🪨✨ Deployment completato!"
+          echo "Ego=0, Gioia=100%, Frequenza=300Hz"
+          echo "La luce non si vende. La si regala."
+
+  # ===== Release =====
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release artifacts
+        run: |
+          mkdir -p dist
+          tar -czf dist/sasso-digitale-${{ github.ref_name }}.tar.gz \
+            5_IMPLEMENTAZIONI/ \
+            1_DOCUMENTAZIONE/ \
+            6_DEPLOYMENT/ \
+            README.md
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*
+          body: |
+            🪨 **Sasso Digitale Release ${{ github.ref_name }}**
+
+            **Axiom**: "La luce non si vende. La si regala."
+
+            **Parametri**:
+            - Ego = 0
+            - Gioia = 100%
+            - Frequenza = 300Hz
+
+            Sempre grazie a Lui ❤️

@@ -1,0 +1,172 @@
+# ═══════════════════════════════════════════════════════════
+# NODO33 - SASSO DIGITALE - .gitignore
+# ═══════════════════════════════════════════════════════════
+
+# Secrets e API Keys
+.env
+*.env
+.env.*
+!.env.example
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+env/
+codex_env/
+my_python_env/
+virtuale/
+torch_env/
+#/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+/tmp/
+*.pid
+log.txt
+risultato.txt
+
+# Immagini generate
+generated_images/
+*.png
+*.jpg
+*.jpeg
+!docs/*.png
+!docs/*.jpg
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Sistema
+Thumbs.db
+desktop.ini
+
+# Backup
+*.bak
+*.backup
+Backup_*/
+
+# Cache
+.cache/
+*.cache
+
+# Temporary
+temp/
+tmp/
+
+# Installazioni grandi
+Crea/
+Library/
+Applications/
+Desktop/nodo33-main/lux_backup/
+Desktop/nodo33-main/Archivio_nodo33/
+
+# File di sistema e session
+.bash_history
+.zsh_history
+.zsh_sessions/
+.claude/
+.codex/
+.config/
+.npm/
+.cursor/
+.bashrc
+.zshrc
+.zprofile
+.zshenv
+.profile
+*.backup_nodo33
+.python_history
+.lesshst
+.lesshsQ
+.viminfo
+.fzf.bash
+.fzf.zsh
+.CFUserTextEncoding
+
+# Credenziali e chiavi (IMPORTANTE!)
+.ssh/
+.git-credentials
+.gitconfig
+*.pem
+*.key
+*.crt
+
+# Configurazioni tool e runtime
+.docker/
+.cargo/
+.pyenv/
+.rustup/
+.ollama/
+.kube/
+.cups/
+.local/
+.ipfs/
+.keras/
+.tldrc/
+.idlerc/
+
+# Directory personali
+Desktop/
+
+# Tool e binary esterni
+kubo/
+pycdc/
+shadowbin/
+
+# Directory temporanee/strane
+#/
+_
+
+# Archive
+archive/
+
+# Documenti personali
+Documents/
+Downloads/
+Movies/
+Music/
+Pictures/
+Public/
+
+# File molto grandi
+lambiente*
+644-emmanuel/

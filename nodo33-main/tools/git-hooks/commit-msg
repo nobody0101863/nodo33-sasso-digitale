@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# AXIOM-644 commit-msg: aggiunge fingerprint alla fine del messaggio.
+set -euo pipefail
+
+MSG_FILE="$1"
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+HASHER="$ROOT/tools/codex_hash.py"
+
+if [ ! -x "$HASHER" ]; then
+  echo "[AX644] codex_hash non trovato o non eseguibile ($HASHER), salto." >&2
+  exit 0
+fi
+
+first_file=$(git diff --cached --name-only --diff-filter=ACM | head -n1)
+[ -z "$first_file" ] && exit 0
+[ -f "$first_file" ] || exit 0
+
+fp_line=$("$HASHER" "$first_file" | awk -F= '/^fingerprint=/{print $2}')
+[ -z "$fp_line" ] && exit 0
+
+{
+  echo ""
+  echo "[AXIOM-644] $fp_line"
+} >> "$MSG_FILE"
+
+exit 0

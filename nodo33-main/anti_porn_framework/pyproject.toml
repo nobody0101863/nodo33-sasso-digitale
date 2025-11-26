@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anti-porn-framework"
+version = "0.1.8"
+authors = [{ name = "Emanuele Croci Parravicini", email = "info@spiritualtech.example" }]
+description = "Spiritual-technical framework for digital purity: integrates ancient sacred codex with anti-porn content filtering."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+dependencies = ["torch", "pillow"]  # Per ML e immagini
+
+[project.scripts]
+purify = "anti_porn_framework.main:main"

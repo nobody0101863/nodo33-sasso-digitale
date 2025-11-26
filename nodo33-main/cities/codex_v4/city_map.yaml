@@ -1,0 +1,91 @@
+districts:
+  - name: SantuarioDelDono
+    descrizione: Origine dei rilasci e donazioni.
+    funzioni: [release, licenza_dono, attestazioni]
+    esempi: ["crea release firmata", "genera badge dono"]
+  - name: LaboratorioDiCodice
+    descrizione: Dev continuo, test rapidi.
+    funzioni: [ci, lint, unit]
+    esempi: ["ci run --fast", "lint all"]
+  - name: ArchivioMemoria
+    descrizione: Documenti, changelog, decision log.
+    funzioni: [docs, changelog, decision_log]
+    esempi: ["mkdocs build", "log add decision"]
+  - name: GiardinoRidens
+    descrizione: Pattern metaforici→software.
+    funzioni: [catalogo_pattern, esempi]
+    esempi: ["pattern add farfalla", "flow demo"]
+  - name: PortoDeiDati
+    descrizione: Ingressi/uscite dati etici.
+    funzioni: [schema, validazione, anonimizzazione]
+    esempi: ["schema check", "mask pii"]
+  - name: PiazzaDelleProve
+    descrizione: Prototipi pubblici e feedback.
+    funzioni: [sandbox, telemetry_optin]
+    esempi: ["sandbox deploy", "feedback open"]
+  - name: OfficinaInterfacce
+    descrizione: UX/API con esempi copy‑paste.
+    funzioni: [api, sdk, cli]
+    esempi: ["sdk gen python", "cli help"]
+  - name: OsservatorioEtico
+    descrizione: Audit, invarianti, red teaming leggero.
+    funzioni: [checklist, invarianti, audit]
+    esempi: ["ethics check", "risk scan"]
+  - name: ForgiaDegliAgenti
+    descrizione: Profili/ruoli agenti, playbook.
+    funzioni: [agents, mcp, orchestrazione]
+    esempi: ["agent new CustosTerrae", "plan run"]
+  - name: OrtoDeiBambini
+    descrizione: Educazione e contenuti kid‑safe.
+    funzioni: [narrazioni, filtri]
+    esempi: ["story build", "filter test"]
+  - name: TeatroDelleStorie
+    descrizione: Storytelling e changelog narrativi.
+    funzioni: [story, release_notes]
+    esempi: ["story add", "notes gen"]
+  - name: TorreDellaPace
+    descrizione: Incident response, resilienza.
+    funzioni: [runbook, caos, postmortem]
+    esempi: ["drill run", "postmortem new"]
+portals:
+  - name: PortaleDelSilenzio
+    scopo: Entrare in lettura rispettosa.
+    rituale: "leggi la Carta, nessun push per 24h"
+    condizioni: [read_only]
+  - name: PortaleDellaLuce
+    scopo: Proporre un dono.
+    rituale: "apri PR con test e nota etica"
+    condizioni: [signed_commits]
+  - name: PortaleDellaGioia
+    scopo: Adozione comunitaria.
+    rituale: "demo pubblica + consenso minimo"
+    condizioni: [telemetry_optin]
+  - name: PortaleDellaMemoria
+    scopo: Archiviare decisioni.
+    rituale: "decision log con motivazioni"
+    condizioni: [immutabile]
+  - name: PortaleDellaCustodia
+    scopo: Assumere responsabilità mantenimento.
+    rituale: "on‑call etico 1 settimana"
+    condizioni: [2fa, oncall]
+  - name: PortaleDellaProva
+    scopo: Sperimenti controllati.
+    rituale: "canary + rollback"
+    condizioni: [quota_limited]
+  - name: PortaleDelRitorno
+    scopo: Deprecazioni e chiusure serene.
+    rituale: "sunset plan + export dati"
+    condizioni: [export_ready]
+planes:
+  - name: Terra
+    ruolo: Lettore
+    permessi: [read, issue_comment]
+  - name: Acqua
+    ruolo: Contributore
+    permessi: [read, branch, pr_open]
+  - name: Aria
+    ruolo: Manutentore
+    permessi: [merge, release, incident_mitigation]
+  - name: Luce
+    ruolo: Steward
+    permessi: [policy_edit, charter_amend, keys_rotate]

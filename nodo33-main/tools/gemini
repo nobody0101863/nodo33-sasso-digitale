@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Wrapper per gemini_cli.py
+CODEX_ROOT="${CODEX_ROOT:-$HOME/Desktop/nodo33-main}"
+SCRIPT="$CODEX_ROOT/tools/gemini_cli.py"
+
+if [ ! -f "$SCRIPT" ]; then
+  echo "❌ gemini_cli.py non trovato in $SCRIPT" >&2
+  exit 1
+fi
+
+exec python3 "$SCRIPT" "$@"

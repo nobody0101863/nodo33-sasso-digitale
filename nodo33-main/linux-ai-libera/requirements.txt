@@ -1,0 +1,35 @@
+# NODO33 - Linux AI Libera - Dipendenze Python
+# Installa con: pip install -r requirements.txt
+
+# Core AI Libraries
+langchain==0.1.0
+langchain-community==0.0.13
+crewai==0.1.0
+
+# LLM Backends (locale)
+ollama==0.1.6
+
+# Vector Stores & Embeddings
+chromadb==0.4.22
+sentence-transformers==2.3.1
+
+# Document Processing
+pypdf==4.0.1
+python-docx==1.1.0
+markdown==3.5.2
+
+# Text-to-Speech
+gTTS==2.5.0
+pyttsx3==2.90
+
+# Web & Search
+requests==2.31.0
+beautifulsoup4==4.12.3
+
+# Utilities
+python-dotenv==1.0.1
+tqdm==4.66.1
+
+# Optional: Advanced features
+# autogen-agentchat==0.2.0  # Uncomment per multi-agente avanzato
+# openai-whisper==20231117  # Uncomment per STT locale

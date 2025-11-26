@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2025-11-18T20:30:40.166505",
+    "file_path": "backups/codex_backup_20251118_203040.db.gz",
+    "original_size": 110592,
+    "compressed_size": 2308,
+    "checksum": "b8f26108ec90dd816eb2eddd9131ca3a4854b3cacae030e347ae22b9a6b531e4",
+    "backup_type": "full",
+    "compression_ratio": "97.9%"
+  }
+]

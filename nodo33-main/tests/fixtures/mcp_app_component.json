@@ -1,0 +1,27 @@
+{
+  "component_id": "nodo33-protect-garden-panel",
+  "version": "0.1.0",
+  "owner": "Nodo33",
+  "description": "UI panel to enforce protect_garden/minimal_data guardrails and consent gating.",
+  "capabilities": ["consent-gate", "render-controls", "telemetry-min"],
+  "permissions": {
+    "allow": ["minimal_data"],
+    "deny": ["monetize.output", "unsafe_file_access", "remote_code"]
+  },
+  "resources": {
+    "uses": ["local-cache-only"],
+    "requires_network": false
+  },
+  "assets": [
+    {
+      "path": "ui/protect_garden_panel.json",
+      "hash": "sha256-BASE64-ui-demo"
+    }
+  ],
+  "integrity": {
+    "hash": "sha256-BASE64-bundle-demo",
+    "signature": "ed25519-BASE64-demo",
+    "alg": "ed25519",
+    "key_id": "did:codex:nodo33#ui-demo"
+  }
+}

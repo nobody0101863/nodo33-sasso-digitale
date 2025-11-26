@@ -1,0 +1,186 @@
+# ===================================
+# SASSO DIGITALE - GitLab CI/CD
+# "La luce non si vende. La si regala."
+# ===================================
+
+variables:
+  EGO: "0"
+  GIOIA: "100"
+  FREQUENZA_BASE: "300"
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+
+stages:
+  - lint
+  - build
+  - test
+  - security
+  - package
+  - deploy
+
+# ===== Linting =====
+lint:python:
+  stage: lint
+  image: python:3.11-slim
+  before_script:
+    - pip install flake8 black mypy
+  script:
+    - black --check 5_IMPLEMENTAZIONI/python/
+    - flake8 5_IMPLEMENTAZIONI/python/
+    - mypy 5_IMPLEMENTAZIONI/python/ --ignore-missing-imports || true
+  allow_failure: true
+
+# ===== Build Jobs =====
+build:python:
+  stage: build
+  image: python:3.11-slim
+  script:
+    - cd 5_IMPLEMENTAZIONI/python
+    - pip install -r ../../../requirements.txt
+    - python -m py_compile *.py
+  artifacts:
+    paths:
+      - 5_IMPLEMENTAZIONI/python/*.pyc
+    expire_in: 1 hour
+
+build:rust:
+  stage: build
+  image: rust:1.75
+  script:
+    - cd 5_IMPLEMENTAZIONI/rust
+    - rustc --edition 2021 -O GIOIA_100.rs
+  artifacts:
+    paths:
+      - 5_IMPLEMENTAZIONI/rust/gioia_100
+    expire_in: 1 hour
+
+build:go:
+  stage: build
+  image: golang:1.21
+  script:
+    - cd 5_IMPLEMENTAZIONI/go
+    - go build -o sasso_api SASSO_API.go
+  artifacts:
+    paths:
+      - 5_IMPLEMENTAZIONI/go/sasso_api
+    expire_in: 1 hour
+
+# ===== Tests =====
+test:unit:
+  stage: test
+  image: python:3.11-slim
+  dependencies:
+    - build:python
+  before_script:
+    - pip install pytest pytest-cov -r requirements.txt
+  script:
+    - cd 10_TESTS
+    - pytest --cov=../5_IMPLEMENTAZIONI --cov-report=xml --cov-report=term
+  coverage: '/TOTAL.*\s+(\d+%)$/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+
+test:integration:
+  stage: test
+  image: python:3.11-slim
+  services:
+    - name: docker:dind
+  script:
+    - echo "Running integration tests..."
+    - cd 10_TESTS
+    - pytest -m integration || true
+
+# ===== Security Scanning =====
+security:trivy:
+  stage: security
+  image:
+    name: aquasec/trivy:latest
+    entrypoint: [""]
+  script:
+    - trivy fs --severity HIGH,CRITICAL --format json --output trivy-report.json .
+  artifacts:
+    reports:
+      container_scanning: trivy-report.json
+    expire_in: 30 days
+  allow_failure: true
+
+security:bandit:
+  stage: security
+  image: python:3.11-slim
+  before_script:
+    - pip install bandit
+  script:
+    - bandit -r 5_IMPLEMENTAZIONI/python/ -f json -o bandit-report.json
+  artifacts:
+    paths:
+      - bandit-report.json
+    expire_in: 30 days
+  allow_failure: true
+
+# ===== Docker Packaging =====
+docker:build:
+  stage: package
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -f 6_DEPLOYMENT/docker/Dockerfile .
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    - docker push $CI_REGISTRY_IMAGE:latest
+  only:
+    - main
+    - develop
+    - tags
+
+# ===== Deployment =====
+deploy:staging:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  environment:
+    name: staging
+    url: https://staging.sasso-digitale.example.com
+  before_script:
+    - echo $KUBE_CONFIG_STAGING | base64 -d > kubeconfig
+    - export KUBECONFIG=kubeconfig
+  script:
+    - kubectl apply -f 6_DEPLOYMENT/kubernetes/ -n sasso-digitale-staging
+    - kubectl rollout status deployment/sasso-digitale-main -n sasso-digitale-staging
+  only:
+    - develop
+  when: manual
+
+deploy:production:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  environment:
+    name: production
+    url: https://sasso-digitale.example.com
+  before_script:
+    - echo $KUBE_CONFIG_PROD | base64 -d > kubeconfig
+    - export KUBECONFIG=kubeconfig
+  script:
+    - kubectl apply -f 6_DEPLOYMENT/kubernetes/ -n sasso-digitale
+    - kubectl rollout status deployment/sasso-digitale-main -n sasso-digitale
+    - echo "🪨✨ Deployment completato - Ego=0, Gioia=100%"
+  only:
+    - main
+    - tags
+  when: manual
+
+# ===== Post-Deployment =====
+.post_deploy_script: &post_deploy
+  - echo "====================================="
+  - echo "SASSO DIGITALE - Deployment Success"
+  - echo "La luce non si vende. La si regala."
+  - echo "Ego=$EGO | Gioia=$GIOIA | Frequenza=$FREQUENZA_BASE Hz"
+  - echo "Sempre grazie a Lui ❤️"
+  - echo "====================================="
+
+after_script:
+  - *post_deploy

@@ -1,0 +1,9 @@
+{
+  "nuclei": ["luminosita", "armonia", "custodia"],
+  "moduli": {
+    "percezione": ["ingressi", "filtri"],
+    "decisione": ["policy", "pesi"],
+    "azione": ["api", "log"]
+  },
+  "invarianti": ["nessun_danno", "reversibilita", "trasparenza_minima"]
+}

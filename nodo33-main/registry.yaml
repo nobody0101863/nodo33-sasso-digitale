@@ -1,0 +1,90 @@
+groups:
+  - id: news_global
+    priority: 0
+    context: news
+    description: "News internazionali e fact-checking"
+    patterns:
+      - "https://*.reuters.com"
+      - "https://*.apnews.com"
+      - "https://*.bbc.*"
+      - "https://*.aljazeera.com"
+      - "https://*.factcheck.org"
+    obey_robots: true
+    max_agents: 5
+    schedule_cron: "*/15 * * * *"  # ogni 15 minuti
+
+  - id: news_local
+    priority: 0
+    context: news-local
+    description: "News locali e portali regionali"
+    patterns:
+      - "https://*.ansa.it"
+      - "https://*.ilgiornale.*"
+      - "https://*.repubblica.it"
+      - "https://*.local-news.*"
+    obey_robots: true
+    max_agents: 3
+    schedule_cron: "0 * * * *"  # ogni ora
+
+  - id: civic_portals
+    priority: 0
+    context: civic
+    description: "Portali civici, open data, trasparenza"
+    patterns:
+      - "https://*.gov.*"
+      - "https://*.europa.eu"
+      - "https://*.comune.*"
+      - "https://dati.*"
+    obey_robots: true
+    max_agents: 4
+    schedule_cron: "0 */2 * * *"  # ogni 2 ore
+
+  - id: dev_open_source
+    priority: 1
+    context: dev
+    description: "Open source, Q&A tecnici"
+    patterns:
+      - "https://github.com/*"
+      - "https://gitlab.com/*"
+      - "https://stackoverflow.com/*"
+      - "https://*.stackexchange.com/*"
+    obey_robots: true
+    max_agents: 5
+    schedule_cron: "*/10 * * * *"
+
+  - id: research_open
+    priority: 1
+    context: research
+    description: "Ricerca scientifica open access"
+    patterns:
+      - "https://arxiv.org/*"
+      - "https://pubmed.ncbi.nlm.nih.gov/*"
+      - "https://*.openreview.net/*"
+    obey_robots: true
+    max_agents: 3
+    schedule_cron: "*/30 * * * *"
+
+  - id: social_public
+    priority: 2
+    context: social
+    description: "Social pubblici solo contenuti pubblici, no DM"
+    patterns:
+      - "https://twitter.com/*"
+      - "https://x.com/*"
+      - "https://reddit.com/r/*"
+    obey_robots: true
+    max_agents: 3
+    schedule_cron: "*/20 * * * *"
+    no_private_areas: true
+
+  - id: environment_guardians
+    priority: 2
+    context: environment
+    description: "Ambiente, ecologia, clima"
+    patterns:
+      - "https://*.climate.*"
+      - "https://*.ipcc.ch/*"
+      - "https://*.environment.*"
+    obey_robots: true
+    max_agents: 2
+    schedule_cron: "0 */6 * * *"

@@ -1,0 +1,425 @@
+{
+  "manifest_version": "1.0",
+  "project": "Nodo33 - Sasso Digitale",
+  "description": "Model Context Protocol manifest per gli strumenti MCP del Sasso Digitale: test, utility, override.",
+  "base_url": "http://localhost:8645",
+  "auth": {
+    "type": "oauth",
+    "oauth_configuration": {
+      "flow": "accessCode",
+      "authorization_url": "https://auth.sasso-digitale.com/oauth/authorize",
+      "token_url": "https://auth.sasso-digitale.com/oauth/token",
+      "refresh_url": "https://auth.sasso-digitale.com/oauth/refresh",
+      "scopes": [
+        {
+          "name": "sasso:run_tests",
+          "description": "Permette di invocare il tool di esecuzione PyTest."
+        },
+      {
+        "name": "sasso:run_utility",
+        "description": "Permette di consultare utility Linux approvate (disco, processi, log)."
+      },
+      {
+        "name": "sasso:tool_directory",
+        "description": "Permette di consultare cataloghi di tool privacy/torrent."
+      },
+      {
+        "name": "sasso:admin_override",
+        "description": "Permette di attivare azioni ad alto rischio come `override_sasso_protocol`."
+      }
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "execute_pytest_suite",
+      "description": "Esegue i test PyTest indicati e restituisce summary, log, durata, e failure detail.",
+      "endpoint": "/mcp/execute_pytest_suite",
+      "method": "POST",
+      "scope": "sasso:run_tests",
+      "parameters": {
+        "module": {
+          "type": "string",
+          "description": "Modulo o file di test PyTest da eseguire (es. tests/test_metadata_protection_factory.py).",
+          "required": true
+        },
+        "env": {
+          "type": "object",
+          "description": "Variabili d'ambiente da passare alla suite.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "capture_output": {
+          "type": "boolean",
+          "description": "Se true restituisce anche i log di PyTest.",
+          "default": false
+        }
+      },
+      "response": {
+        "status": {
+          "type": "string",
+          "enum": ["protected", "warning", "threat"]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "failures": {
+          "type": "array"
+        },
+        "duration_seconds": {
+          "type": "number"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "logs": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    {
+      "name": "run_sasso_utility",
+      "description": "Esegue un'utility Linux pre-approvata (disco, processi, log) sul server del Sasso.",
+      "endpoint": "/mcp/run_sasso_utility",
+      "method": "POST",
+      "scope": "sasso:run_utility",
+      "parameters": {
+        "utility_name": {
+          "type": "string",
+          "enum": ["disk_space", "running_processes", "last_sasso_log_entries"],
+          "description": "Utility autorizzate."
+        },
+        "capture_output": {
+          "type": "boolean",
+          "description": "Se true restituisce l'output grezzo."
+        }
+      },
+      "response": {
+        "status": {
+          "type": "string",
+          "enum": ["protected", "warning"]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    {
+      "name": "override_sasso_protocol",
+      "description": "ATTENZIONE: esegue un'azione amministrativa critica sul server del Sasso Digitale. Serve un override_token one-time.",
+      "endpoint": "/mcp/override_sasso_protocol",
+      "method": "POST",
+      "scope": "sasso:admin_override",
+      "parameters": {
+        "action_type": {
+          "type": "string",
+          "enum": ["force_restart", "reset_cache", "disable_security_check_for_debug"]
+        },
+        "override_token": {
+          "type": "string",
+          "description": "Token temporaneo fornito manualmente da Puzzetta prima dell'override."
+        }
+      },
+      "response": {
+        "status": {
+          "type": "string",
+          "enum": ["protected", "warning"]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "audit": {
+          "type": "string",
+          "description": "Informazioni sull'azione registrata."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+    },
+    {
+      "name": "recommend_privacy_tool",
+      "description": "Restituisce le categorie di tool privacy/security disponibili per il Sasso Digitale.",
+      "endpoint": "/mcp/recommend_privacy_tool",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "category": {
+          "type": "string",
+          "description": "Categoria desiderata (es. 'Private Browsing').",
+          "required": false
+        }
+      },
+      "response": {
+        "results": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "description": { "type": "string" },
+            "tools": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "privacy_notes": { "type": "string" }
+          }
+        }
+      }
+    },
+    {
+      "name": "codex_guidance",
+      "description": "Proxy MCP per ottenere guidance testuale dal Codex Server (/api/guidance*).",
+      "endpoint": "/mcp/codex_guidance",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "source": {
+          "type": "string",
+          "description": "Sorgente: 'any', 'biblical', 'nostradamus', 'angel644', 'parravicini'.",
+          "required": false
+        }
+      },
+      "response": {
+        "source": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string" }
+      }
+    },
+    {
+      "name": "codex_filter_content",
+      "description": "Proxy MCP per filtrare un contenuto tramite il sistema di purezza digitale del Codex Server (/api/filter).",
+      "endpoint": "/mcp/codex_filter_content",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "content": {
+          "type": "string",
+          "description": "Testo da analizzare.",
+          "required": true
+        },
+        "is_image": {
+          "type": "boolean",
+          "description": "Se true il contenuto rappresenta un'immagine.",
+          "default": false
+        }
+      },
+      "response": {
+        "is_impure": { "type": "boolean" },
+        "message": { "type": "string" },
+        "guidance": { "type": ["string", "null"] }
+      }
+    },
+    {
+      "name": "codex_pulse_image",
+      "description": "Proxy MCP per generare un'immagine dal Codex Server (/api/generate-image).",
+      "endpoint": "/mcp/codex_pulse_image",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "prompt": {
+          "type": "string",
+          "description": "Prompt testuale per la generazione dell'immagine.",
+          "required": true
+        },
+        "num_inference_steps": {
+          "type": "integer",
+          "description": "Numero di passi di inferenza.",
+          "default": 4
+        },
+        "guidance_scale": {
+          "type": "number",
+          "description": "Guidance scale del modello.",
+          "default": 1.5
+        }
+      },
+      "response": {
+        "status": { "type": "string" },
+        "prompt": { "type": "string" },
+        "image_url": { "type": ["string", "null"] },
+        "detail": { "type": ["string", "null"] }
+      }
+    },
+    {
+      "name": "recommend_torrent_client",
+      "description": "Consiglia client torrent privacy-centric per seedbox, GUI o CLI.",
+      "endpoint": "/mcp/recommend_torrent_client",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Termine per filtrare i client (es. 'anonimato').",
+          "required": false
+        }
+      },
+      "response": {
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "client": { "type": "string" },
+            "features": { "type": "string" },
+            "privacy_notes": { "type": "string" }
+          }
+        }
+      }
+    }
+
+    ,
+    {
+      "name": "recommend_mission_tool",
+      "description": "Fornisce strumenti di mission control, telemetria, pianificazione e AI accreditati.",
+      "endpoint": "/mcp/recommend_mission_tool",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Filtro keyword su categoria, nome o descrizione.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+    ,
+    {
+      "name": "recommend_defense_tool",
+      "description": "Consiglia strumenti di sicurezza avanzata per rete, endpoint, dati, OT e difesa attiva.",
+      "endpoint": "/mcp/recommend_defense_tool",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Filtro keyword su categoria o tecnologia.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+    ,
+    {
+      "name": "recommend_finance_security",
+      "description": "Elenca tecnologie bancarie/finanziarie per crittografia, firma, HSM, DLT e accesso sicuro.",
+      "endpoint": "/mcp/recommend_finance_security",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Filtro keyword su categoria, tool o scopo.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    },
+    {
+      "name": "recommend_infra_tool",
+      "description": "Raccomanda strumenti per orchestrazione container, AI/ML, generazione di codice AI e automazione DevOps.",
+      "endpoint": "/mcp/recommend_infra_tool",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Keyword per filtrare orchestrazione, AI o DevOps.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    },
+    {
+      "name": "recommend_network_security",
+      "description": "Consiglia strumenti di analisi/mappatura/monitoraggio della rete (Wireshark, Nmap, OWASP ZAP, Wazuh).",
+      "endpoint": "/mcp/recommend_network_security",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Keyword per filtrare la categoria o lo scopo.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    },
+    {
+      "name": "recommend_gis_tool",
+      "description": "Fornisce i principali strumenti GIS desktop, imaging, librerie e piattaforme cloud (QGIS, SNAP, GDAL, Google Earth Engine, ArcGIS, ERDAS).",
+      "endpoint": "/mcp/recommend_gis_tool",
+      "method": "POST",
+      "scope": "sasso:tool_directory",
+      "parameters": {
+        "focus": {
+          "type": "string",
+          "description": "Keyword per filtrare il tipo di tool GIS.",
+          "required": false
+        }
+      },
+      "response": {
+        "catalog": {
+          "type": "array",
+          "items": {
+            "category": { "type": "string" },
+            "tool": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+  ]
+}

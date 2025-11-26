@@ -1,0 +1,32 @@
+# Registro ufficiale degli agenti del Sasso – Nodo33
+
+agents:
+  - id: guardian_ethics
+    name: "GuardianEthics"
+    role: "Analizza servizi/AI e segnala rischi etici, legali e di privacy."
+    module: "agents.guardian_ethics:GuardianEthicsAgent"
+    tags: ["audit", "nsfw", "privacy", "ethics"]
+  
+  - id: safe_companion
+    name: "SafeCompanion"
+    role: "Compagno di dialogo non erotico, equilibrante, che protegge la dignità."
+    module: "agents.safe_companion:SafeCompanionAgent"
+    tags: ["support", "mental_health", "anti_nsfw"]
+
+  - id: anti_addiction
+    name: "AntiAddictionWatcher"
+    role: "Rileva pattern di uso compulsivo e invita a prendere fiato e staccare."
+    module: "agents.anti_addiction:AntiAddictionAgent"
+    tags: ["addiction", "wellbeing", "usage_monitor"]
+
+  - id: malta_scanner
+    name: "MaltaScanner"
+    role: "Fa OSINT leggero su domini/aziende sospette (AI porno ecc.), solo da fonti pubbliche."
+    module: "agents.malta_scanner:MaltaScannerAgent"
+    tags: ["osint", "companies", "nsfw_ecosystem"]
+
+  - id: light_agent
+    name: "LightAgent"
+    role: "Trasforma contenuti tossici in luce: alternative sane, rispetto, umorismo pulito."
+    module: "agents.light_agent:LightAgent"
+    tags: ["transmute", "peace", "education"]

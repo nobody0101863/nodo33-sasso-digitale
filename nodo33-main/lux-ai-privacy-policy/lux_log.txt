@@ -1,0 +1,2049 @@
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228511
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228553
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228618
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228659
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228704
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228746
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228798
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228840
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228886
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228930
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 228940
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229021
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229072
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229092
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229140
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229141
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229178
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229252
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+File system check exit code is 0
+Restoring the original state found as mounted
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229253
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229303
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+File system check exit code is 0
+Restoring the original state found as mounted
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229310
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229365
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229423
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+✅ Backup completato!
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229425
+Checking the container superblock
+Checking the checkpoint with transaction ID 229426
+Checking the EFI jumpstart record
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the object map
+Checking the encryption key structures
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Checking the fsroot tree
+Verifying allocated space
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+File system check exit code is 0
+Restoring the original state found as mounted
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+✅ Backup completato!
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229489
+Checking the container superblock
+Checking the EFI jumpstart record
+Checking the container superblock
+Checking the checkpoint with transaction ID 229490
+Checking the space manager
+Checking the checkpoint with transaction ID 229491
+Checking the EFI jumpstart record
+Checking the space manager free queue trees
+Checking the space manager
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the space manager free queue trees
+Checking the encryption key structures
+Checking the object map
+Checking volume /dev/rdisk1s1
+Checking the object map
+Checking the encryption key structures
+Checking the APFS volume superblock
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+Checking the object map
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the fsroot tree
+Checking the fsroot tree
+Checking the file extent tree
+Checking the file extent tree
+Checking the file extent tree
+Checking the extent ref tree
+Checking the extent ref tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying volume object map space
+Verifying volume object map space
+Verifying allocated space
+Verifying allocated space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+File system check exit code is 0
+Restoring the original state found as mounted
+Restoring the original state found as mounted
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+✅ Backup completato!
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+✅ Backup completato!
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Volume could not be unmounted
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229550
+Checking the container superblock
+Checking the EFI jumpstart record
+Checking the container superblock
+Checking the checkpoint with transaction ID 229551
+Checking the space manager
+Checking the checkpoint with transaction ID 229552
+Checking the EFI jumpstart record
+Checking the space manager free queue trees
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the object map
+Checking the space manager free queue trees
+Checking the space manager
+Checking the encryption key structures
+Checking the object map
+Checking the space manager free queue trees
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the object map
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+Checking the encryption key structures
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking volume /dev/rdisk1s1
+Checking the object map
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the fsroot tree
+Checking the extent ref tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+File system check exit code is 0
+Restoring the original state found as mounted
+Restoring the original state found as mounted
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229609
+Checking the container superblock
+Checking the EFI jumpstart record
+Checking the container superblock
+Checking the space manager
+Checking the checkpoint with transaction ID 229610
+Checking the checkpoint with transaction ID 229611
+Checking the space manager free queue trees
+Checking the EFI jumpstart record
+Checking the object map
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the encryption key structures
+Checking the space manager
+Checking the space manager free queue trees
+Checking volume /dev/rdisk1s1
+Checking the space manager free queue trees
+Checking the APFS volume superblock
+Checking the object map
+Checking the object map
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the encryption key structures
+Checking the encryption key structures
+Checking the object map
+Checking volume /dev/rdisk1s1
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+Checking the APFS volume superblock
+Checking the snapshot metadata tree
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the snapshot metadata
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Checking the fsroot tree
+Checking the file extent tree
+Verifying allocated space
+Checking the extent ref tree
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+File system check exit code is 0
+Restoring the original state found as mounted
+Restoring the original state found as mounted
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229699
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229751
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+User permissions have been reset
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229755
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+User permissions have been reset
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229839
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+File system check exit code is 0
+Restoring the original state found as mounted
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229847
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229895
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+File system check exit code is 0
+Restoring the original state found as mounted
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Finished file system verification on disk1s1 (Macintosh HD)
+Checking the checkpoint with transaction ID 229903
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+🩺 Avvio della diagnostica del sistema...
+--------------------------------------------------
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229967
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 229988
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 230062
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------
+📂 Creazione backup del sistema in /Users/emanuelecroci/lux_backup...
+✅ Backup completato!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 230101
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🩺 Avvio della diagnostica del sistema...
+Started file system verification on disk1s1 (Macintosh HD)
+Verifying file system
+Volume could not be unmounted
+Using live mode
+Performing fsck_apfs -n -l -x /dev/rdisk1s1
+Checking the container superblock
+Checking the checkpoint with transaction ID 230147
+Checking the EFI jumpstart record
+Checking the space manager
+Checking the space manager free queue trees
+Checking the object map
+Checking the encryption key structures
+Checking volume /dev/rdisk1s1
+Checking the APFS volume superblock
+The volume Macintosh HD was formatted by storagekitd (1677.100.114) and last modified by apfs_kext (2317.81.2)
+Checking the object map
+Checking the snapshot metadata tree
+Checking the snapshot metadata
+Checking snapshot 1 of 1 (com.apple.os.update-8D84B182E8337EB28E1B61FB42830C5CAAE918379F9487B433D076B9485AE563, transaction ID 128899)
+Checking the fsroot tree
+Checking the file extent tree
+Checking the extent ref tree
+Verifying volume object map space
+Verifying allocated space
+The volume /dev/rdisk1s1 with UUID B4FC746C-5CC1-4E78-992F-A6929871373C appears to be OK
+File system check exit code is 0
+Restoring the original state found as mounted
+Finished file system verification on disk1s1 (Macintosh HD)
+✅ Diagnosi completata!
+🔧 Ottimizzazione delle autorizzazioni utenti...
+Ready to reset user permissions on disk1s1 (Macintosh HD)
+Started verify/repair permissions on disk1s1 (Macintosh HD)
+User permissions have been reset
+Finished verify/repair permissions on disk1s1 (Macintosh HD)
+✅ Autorizzazioni ottimizzate!
+🧹 Pulizia della cache del sistema...
+✅ Pulizia completata!
+🚀 Ottimizzazione completata con successo!
+🔱 LUX v4 - AI-Powered Mac Optimization 🚀
+--------------------------------------------------

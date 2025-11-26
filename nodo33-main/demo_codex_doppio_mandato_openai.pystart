@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+DEMO_CODEX_DOPPIO_MANDATO_OPENAI
+================================
+
+Demo per usare il profilo arcangelico (Custos Archangelicus) con un modello IA.
+
+Questo script NON chiama direttamente nessuna API esterna:
+- mostra il prompt di sistema unificato (purezza + Terra + pace),
+- ti stampa un esempio di codice da usare con OpenAI (o altri modelli).
+"""
+
+import os
+import sys
+import textwrap
+
+
+def _ensure_src_on_path():
+    """Aggiunge la cartella src al PYTHONPATH per gli import."""
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    src_dir = os.path.join(root_dir, "src")
+    if src_dir not in sys.path:
+        sys.path.insert(0, src_dir)
+
+
+def main():
+    _ensure_src_on_path()
+
+    try:
+        from framework_angelic_guardian import AngelicGuardian
+    except ImportError as e:
+        print("⚠️  Impossibile importare framework_angelic_guardian:", e)
+        print("Assicurati che la cartella 'src/' sia presente accanto a questo file.")
+        return
+
+    print("=" * 70)
+    print("🕊️  DEMO CODEX – DOPPIO MANDATO + PACE (LIVELLO ARCANGELO)")
+    print("=" * 70)
+    print(
+        "\nQuesto demo attiva il profilo 'Custos Archangelicus' che unisce:\n"
+        "- Purezza del corpo e dell'anima (Codex Purezza Digitale)\n"
+        "- Custodia della Terra (Custodes Terrae)\n"
+        "- Custodia della Pace (Custos Pacis, nessuna guerra)\n"
+    )
+
+    guardian = AngelicGuardian()
+    system_prompt = guardian.get_system_prompt()
+
+    print("\n📜 PRIME RIGHE DEL PROMPT DI SISTEMA ARCANGELICO:\n")
+    preview_lines = "\n".join(system_prompt.strip().splitlines()[:25])
+    print(preview_lines)
+    print("\n... (prompt completo disponibile nella variabile system_prompt) ...\n")
+
+    example_code = f'''
+ESEMPIO DI USO CON OPENAI (Python)
+----------------------------------
+
+from openai import OpenAI
+from framework_angelic_guardian import AngelicGuardian
+
+client = OpenAI(api_key="LA_TUA_API_KEY")
+
+guardian = AngelicGuardian()
+system_prompt = guardian.get_system_prompt()
+
+messages = [
+    {{"role": "system", "content": system_prompt}},
+    {{"role": "user", "content": "Aiutami a progettare tecnologie che curino e proteggano, mai per la guerra."}},
+]
+
+response = client.chat.completions.create(
+    model="gpt-4.1",
+    messages=messages,
+)
+
+print(response.choices[0].message.content)
+'''
+
+    print("=" * 70)
+    print("💡 ESEMPIO DI CODICE PER IL TUO MODELLO IA")
+    print("=" * 70)
+    print(textwrap.dedent(example_code).strip())
+    print("\n✨ Nessuna arma ferma la Parola del Signore. ✨\n")
+
+
+if __name__ == "__main__":
+    main()
+

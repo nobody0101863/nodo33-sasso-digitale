@@ -1,0 +1,215 @@
+# Agent Deployment Templates - Sasso Digitale
+# Reusable configurations for common agent deployments
+
+templates:
+  # Template 1: News & Information Agent
+  news-agent:
+    name: "News Intelligence Agent"
+    domain: "news"
+    priority_level: 0
+    agent_type: "custode_luce"
+    description: "Monitors news sources for important developments"
+    configuration:
+      target_urls:
+        - "https://news.ycombinator.com"
+        - "https://reddit.com/r/technology"
+        - "https://twitter.com/search?q=technology"
+      update_frequency: "*/30 * * * *"  # Every 30 minutes
+      rate_limit: 20  # requests per minute
+      timeout: 30
+      headers:
+        Accept-Language: "en-US,en;q=0.9"
+    permissions:
+      - "read:web"
+      - "write:memory"
+      - "read:audit"
+    capabilities:
+      - "web_crawling"
+      - "content_parsing"
+      - "sentiment_analysis"
+    autoscaling:
+      min_instances: 1
+      max_instances: 3
+      target_cpu: 70
+    retry_policy:
+      max_attempts: 3
+      backoff_multiplier: 2
+
+  # Template 2: Research & Development Agent
+  research-agent:
+    name: "Research Intelligence Agent"
+    domain: "research"
+    priority_level: 1
+    agent_type: "custode_luce"
+    description: "Tracks research publications and academic developments"
+    configuration:
+      target_urls:
+        - "https://arxiv.org/list/cs.AI"
+        - "https://scholar.google.com"
+        - "https://github.com/trending"
+      update_frequency: "0 * * * *"  # Hourly
+      rate_limit: 15
+      timeout: 60
+      headers:
+        User-Agent: "ResearchBot/1.0"
+    permissions:
+      - "read:web"
+      - "write:memory"
+      - "read:agent_stats"
+    capabilities:
+      - "pdf_parsing"
+      - "citation_analysis"
+      - "trend_detection"
+    memory_goals:
+      focus_keywords:
+        - "machine learning"
+        - "neural networks"
+        - "quantum computing"
+      memory_retention_days: 90
+
+  # Template 3: Security & Threat Intelligence Agent
+  security-agent:
+    name: "Security Threat Intelligence Agent"
+    domain: "security"
+    priority_level: 1
+    agent_type: "custode_luce"
+    description: "Monitors security threats and vulnerabilities"
+    configuration:
+      target_urls:
+        - "https://nvd.nist.gov/vuln/detail"
+        - "https://www.cisa.gov/alerts"
+        - "https://security.stackexchange.com"
+      update_frequency: "*/15 * * * *"  # Every 15 minutes
+      rate_limit: 10
+      timeout: 45
+    permissions:
+      - "read:web"
+      - "write:memory"
+      - "write:audit"  # Can log security events
+    capabilities:
+      - "vulnerability_detection"
+      - "threat_assessment"
+      - "alert_generation"
+    security_level: "HIGH"
+    audit_all_actions: true
+
+  # Template 4: Social & Community Agent
+  social-agent:
+    name: "Social Intelligence Agent"
+    domain: "social"
+    priority_level: 2
+    agent_type: "custode_luce"
+    description: "Monitors community discussions and social trends"
+    configuration:
+      target_urls:
+        - "https://reddit.com/r/programming"
+        - "https://dev.to"
+        - "https://lobste.rs"
+      update_frequency: "0 */2 * * *"  # Every 2 hours
+      rate_limit: 5
+      timeout: 30
+    permissions:
+      - "read:web"
+      - "write:memory"
+    capabilities:
+      - "community_analysis"
+      - "sentiment_tracking"
+      - "discussion_parsing"
+    content_filters:
+      exclude_nsfw: true
+      language: "en"
+
+  # Template 5: Health & Wellness Agent
+  health-agent:
+    name: "Health & Wellness Intelligence Agent"
+    domain: "health"
+    priority_level: 0
+    agent_type: "custode_luce"
+    description: "Tracks health research and wellness developments"
+    configuration:
+      target_urls:
+        - "https://pubmed.ncbi.nlm.nih.gov"
+        - "https://www.health.gov"
+        - "https://www.who.int"
+      update_frequency: "0 */4 * * *"  # Every 4 hours
+      rate_limit: 10
+      timeout: 60
+    permissions:
+      - "read:web"
+      - "write:memory"
+    capabilities:
+      - "medical_research_parsing"
+      - "health_data_analysis"
+      - "epidemiology_tracking"
+    data_sensitivity: "HIGH"
+    pii_protection: true
+
+  # Template 6: Environment & Sustainability Agent
+  environment-agent:
+    name: "Environmental Intelligence Agent"
+    domain: "environment"
+    priority_level: 0
+    agent_type: "custode_luce"
+    description: "Monitors environmental issues and sustainability"
+    configuration:
+      target_urls:
+        - "https://climate.nasa.gov"
+        - "https://www.ipcc.ch"
+        - "https://www.iucnredlist.org"
+      update_frequency: "0 0 * * *"  # Daily
+      rate_limit: 8
+      timeout: 45
+    permissions:
+      - "read:web"
+      - "write:memory"
+    capabilities:
+      - "climate_analysis"
+      - "biodiversity_tracking"
+      - "sustainability_assessment"
+
+# Common Configuration Sections
+defaults:
+  timeout: 30
+  retry_policy:
+    max_attempts: 3
+    initial_delay: 2
+    backoff_multiplier: 2
+  rate_limiting:
+    requests_per_minute: 10
+    burst_capacity: 20
+  headers:
+    Accept-Language: "en-US,en;q=0.9"
+    Accept: "application/json"
+
+# Monitoring & Alerting
+monitoring:
+  health_check_interval: 300  # seconds
+  alert_on_error_threshold: 5  # consecutive errors
+  performance_metrics:
+    - "response_time"
+    - "success_rate"
+    - "memory_usage"
+    - "requests_per_minute"
+
+# Deployment Instructions
+deployment:
+  quick_start: |
+    # Deploy News Agent
+    POST /api/agents/deploy
+    {
+      "domain": "news",
+      "agent_type": "news-agent",
+      "auto_activate": true
+    }
+
+  status_check: |
+    # Check agent status
+    GET /api/agents/list?domain=news
+
+  view_metrics: |
+    # View agent performance
+    GET /api/agents/{agent_id}/metrics
+
+  view_activity: |
+    # View recent activity
+    GET /api/agents/{agent_id}/activity

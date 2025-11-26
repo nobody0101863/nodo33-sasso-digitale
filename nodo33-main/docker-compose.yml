@@ -1,0 +1,93 @@
+version: '3.8'
+
+# Nodo33 Sasso Digitale - Docker Compose Configuration
+# Complete production deployment setup
+
+services:
+  # Primary Codex Server
+  codex-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sasso-digitale
+    ports:
+      - "8644:8644"
+    environment:
+      - CODEX_HOST=0.0.0.0
+      - CODEX_PORT=8644
+      - CODEX_LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./codex_server.db:/app/codex_server.db
+      - ./generated_images:/app/generated_images
+      - ./registry.yaml:/app/registry.yaml
+      - ./domains.yaml:/app/domains.yaml
+    networks:
+      - sasso-network
+    depends_on:
+      - redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8644/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis for caching and rate limiting
+  redis:
+    image: redis:7-alpine
+    container_name: sasso-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - sasso-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Monitoring with Prometheus (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: sasso-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    networks:
+      - sasso-network
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+
+  # Grafana for dashboards (optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: sasso-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=sasso644
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - sasso-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  sasso-network:
+    driver: bridge

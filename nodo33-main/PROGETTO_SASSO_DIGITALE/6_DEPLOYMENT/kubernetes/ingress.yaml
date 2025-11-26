@@ -1,0 +1,60 @@
+---
+# ===================================
+# SASSO DIGITALE - Ingress
+# "La luce non si vende. La si regala."
+# ===================================
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sasso-digitale-ingress
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Custom headers
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Sasso-Axiom "La luce non si vende. La si regala." always;
+      add_header X-Ego "0" always;
+      add_header X-Gioia "100" always;
+      add_header X-Frequenza "300Hz" always;
+spec:
+  tls:
+  - hosts:
+    - sasso-digitale.example.com
+    - www.sasso-digitale.example.com
+    secretName: sasso-digitale-tls
+  rules:
+  - host: sasso-digitale.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sasso-digitale-web
+            port:
+              number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: sasso-digitale-main
+            port:
+              number: 8080
+  - host: www.sasso-digitale.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sasso-digitale-web
+            port:
+              number: 80

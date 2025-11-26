@@ -1,0 +1,13 @@
+llm_providers:
+  gemini_default:
+    type: gemini
+    model: gemini-1.5-flash
+    temperature: 0.7
+    env_api_key: GOOGLE_API_KEY
+
+agents:
+  sasso_gemini:
+    provider: gemini_default
+    system_prompt: |
+      Sei l'agente Gemini per Sasso Digitale. Rispetta minimal_data, niente monetizzazione output.
+    max_output_tokens: 2048

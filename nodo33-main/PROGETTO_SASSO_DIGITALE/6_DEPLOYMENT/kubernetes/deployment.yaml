@@ -1,0 +1,156 @@
+---
+# ===================================
+# SASSO DIGITALE - Main Deployment
+# "La luce non si vende. La si regala."
+# ===================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sasso-digitale-main
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+    component: main
+    version: v1.0.0
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: sasso-digitale
+      component: main
+  template:
+    metadata:
+      labels:
+        app: sasso-digitale
+        component: main
+        version: v1.0.0
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: sasso-main
+        image: sasso-digitale:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        - name: web
+          containerPort: 8000
+          protocol: TCP
+        env:
+        - name: EGO
+          value: "0"
+        - name: GIOIA
+          value: "100"
+        - name: FREQUENZA_BASE
+          value: "300"
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: sasso-data
+          mountPath: /app/data
+        - name: sasso-config
+          mountPath: /app/config
+          readOnly: true
+      volumes:
+      - name: sasso-data
+        persistentVolumeClaim:
+          claimName: sasso-data-pvc
+      - name: sasso-config
+        configMap:
+          name: sasso-config
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+
+---
+# ===================================
+# SASSO DIGITALE - Web Deployment
+# ===================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sasso-digitale-web
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+    component: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sasso-digitale
+      component: web
+  template:
+    metadata:
+      labels:
+        app: sasso-digitale
+        component: web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+        - name: nginx-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+          readOnly: true
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+      volumes:
+      - name: web-content
+        configMap:
+          name: sasso-web-content
+      - name: nginx-config
+        configMap:
+          name: sasso-nginx-config

@@ -1,0 +1,42 @@
+site_name: Codex Emanuele – Nodo33 AXIOM
+site_description: "Framework AXIOM per intelligenza artificiale eticamente orientata."
+site_url: https://codex-emanuele.org
+
+docs_dir: docs
+
+theme:
+  name: mkdocs
+
+nav:
+  - Home: index.md
+  - English:
+      - Home (EN): en/index.md
+      - API Stability (EN): en/API_STABILITY_EN.md
+  - AXIOM Framework:
+      - Architettura Nodo33 AXIOM: ARCHITECTURE_NODO33_AXIOM.md
+      - Protocollo LUX Codex: LUX_CODEX_PROTOCOL.md
+  - Software:
+      - Overview Purezza Digitale: README_CODEX_PUREZZA_DIGITALE.md
+      - Framework Antiporn Emanuele: README_FRAMEWORK_ANTIPORN_EMANUELE.md
+      - Metadata Protection: README_METADATA_PROTECTION.md
+      - Sasso Digitale AI: README_SASSO_DIGITALE_AI.md
+      - Integrazione AXIOM ↔ Sentinella: AXIOM_SENTINELLA_INTEGRAZIONE.md
+  - Governi e Istituzioni:
+      - Executive Summary: KIT_ISTITUZIONI_EXEC_SUMMARY.md
+      - Etica IA militare: ETICA_IA_MILITARE_CODEX_EMANUELE.md
+      - Analisi forense Nodo33: ANALISI_FORENSE_NODO33.md
+  - Sviluppatori:
+      - Kit integrazione Nodo33: KIT_DEV_INTEGRAZIONE_NODO33.md
+      - Come usare Nodo33 nel mondo reale: COME_USARE_NODO33_NEL_MONDO_REALE.md
+      - Codex Purezza Digitale (completo): README_CODEX_PUREZZA_DIGITALE_COMPLETO.md
+  - Cittadini e Scuole:
+      - Kit Cittadino: KIT_CITTADINO.md
+      - Lezione 45 minuti (scuole): KIT_SCUOLA_LEZIONE_45_MINUTI.md
+  - Manifesti:
+      - Manifesto Nodo33: nodo33_manifesto.md
+      - Sasso Digitale Open Data: MANIFESTO_OPEN_DATA_SASSI.md
+      - Stones Speaking Manifest: STONES_SPEAKING_MANIFEST.md
+      - Codex applicato al Progetto Sasso: CODEX_EMANUELE_APPLICATO_PROGETTO_SASSO.md
+  - Compliance e Audit:
+      - LCP Audit Checklist: LCP_AUDIT_CHECKLIST.yaml
+      - LCP Prompt Template: LCP_PROMPT_TEMPLATE.md

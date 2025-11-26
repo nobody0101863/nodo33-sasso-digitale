@@ -1,0 +1,154 @@
+defaults:
+  user_agent: "Nodo33-CustodianBot/1.0 (+https://nodo33.example)"
+  requests_per_minute: 30
+  burst: 10
+  respect_robots: true
+
+domains:
+  - pattern: "https://*.reuters.com"
+    requests_per_minute: 20
+    burst: 5
+    headers:
+      Accept-Language: "en-US,en;q=0.8"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.apnews.com"
+    requests_per_minute: 20
+    burst: 5
+    headers:
+      Accept-Language: "en-US,en;q=0.8"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.bbc.*"
+    requests_per_minute: 20
+    burst: 5
+    headers:
+      Accept-Language: "en-GB,en;q=0.8"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.aljazeera.com"
+    requests_per_minute: 20
+    burst: 5
+    headers:
+      Accept-Language: "en-US,en;q=0.8"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.factcheck.org"
+    requests_per_minute: 15
+    burst: 4
+    headers:
+      Accept-Language: "en-US,en;q=0.8"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.ansa.it"
+    requests_per_minute: 10
+    burst: 3
+    headers:
+      Accept-Language: "it-IT,it;q=0.9"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.ilgiornale.*"
+    requests_per_minute: 10
+    burst: 3
+    headers:
+      Accept-Language: "it-IT,it;q=0.9"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.repubblica.it"
+    requests_per_minute: 10
+    burst: 3
+    headers:
+      Accept-Language: "it-IT,it;q=0.9"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://github.com/*"
+    requests_per_minute: 50
+    burst: 20
+    headers:
+      Accept: "text/html,application/xhtml+xml"
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://gitlab.com/*"
+    requests_per_minute: 40
+    burst: 15
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://stackoverflow.com/*"
+    requests_per_minute: 30
+    burst: 10
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.stackexchange.com/*"
+    requests_per_minute: 30
+    burst: 10
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://arxiv.org/*"
+    requests_per_minute: 20
+    burst: 5
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://pubmed.ncbi.nlm.nih.gov/*"
+    requests_per_minute: 15
+    burst: 4
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.openreview.net/*"
+    requests_per_minute: 15
+    burst: 4
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://twitter.com/*"
+    requests_per_minute: 10
+    burst: 3
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://x.com/*"
+    requests_per_minute: 10
+    burst: 3
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://reddit.com/r/*"
+    requests_per_minute: 15
+    burst: 5
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.climate.*"
+    requests_per_minute: 10
+    burst: 3
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.ipcc.ch/*"
+    requests_per_minute: 10
+    burst: 3
+    respect_robots: true
+    tos_blocked: false
+
+  - pattern: "https://*.environment.*"
+    requests_per_minute: 10
+    burst: 3
+    respect_robots: true
+    tos_blocked: false
+
+  # Dominio vietato (esempio)
+  - pattern: "https://esempio-vietato.com/*"
+    tos_blocked: true

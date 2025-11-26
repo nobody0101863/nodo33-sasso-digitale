@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# AXIOM-644 pre-commit: calcola fingerprint etico (solo log) dei file indicizzati.
+set -euo pipefail
+
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+HASHER="$ROOT/tools/codex_hash.py"
+
+if [ ! -x "$HASHER" ]; then
+  echo "[AX644] codex_hash non trovato o non eseguibile ($HASHER), salto." >&2
+  exit 0
+fi
+
+files=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$files" ] && exit 0
+
+echo "[AX644] Timbro etico (log) sui file indicizzati..."
+while IFS= read -r f; do
+  [ -f "$f" ] || continue
+  fp="$("$HASHER" "$f" | awk -F= '/^fingerprint=/{print $2}')"
+  [ -z "$fp" ] && continue
+  echo " - $f -> $fp"
+done <<< "$files"
+
+exit 0

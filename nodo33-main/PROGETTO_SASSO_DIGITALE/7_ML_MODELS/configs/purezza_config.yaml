@@ -1,0 +1,136 @@
+# ===================================
+# SASSO DIGITALE - Purezza Classifier Config
+# "La luce non si vende. La si regala."
+# ===================================
+
+# Axiom
+axiom: "La luce non si vende. La si regala."
+ego: 0
+gioia: 100
+frequenza_base: 300
+
+# Model Architecture
+model:
+  name: "purezza_classifier"
+  base_model: "bert-base-uncased"  # or "distilbert-base-uncased" for lighter
+  num_labels: 5
+  hidden_dim: 256
+  dropout: 0.3
+  mc_dropout: 0.5
+
+# Training
+training:
+  batch_size: 32
+  epochs: 10
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_steps: 500
+  max_grad_norm: 1.0
+
+  # Ethical regularization
+  ego_penalty_weight: 0.1  # Penalize overconfidence
+  gioia_reward_weight: 0.05  # Reward compassionate predictions
+
+  # Early stopping
+  patience: 3
+  min_delta: 0.001
+
+# Data
+data:
+  train_path: "datasets/train.jsonl"
+  val_path: "datasets/val.jsonl"
+  test_path: "datasets/test.jsonl"
+  max_length: 512
+
+  # Labels
+  label_names:
+    - "purity_score"
+    - "compassion_level"
+    - "ego_indicator"
+    - "joy_presence"
+    - "service_orientation"
+
+  # Class weights (for imbalanced data)
+  class_weights: [1.0, 1.0, 1.5, 1.0, 1.2]
+
+# Evaluation
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - auc_roc
+    - ego_score  # Custom: measure overconfidence
+    - gioia_score  # Custom: measure compassion
+    - fairness_disparate_impact
+    - interpretability_score
+
+  thresholds: [0.3, 0.5, 0.7]
+
+  # Fairness
+  protected_attributes:
+    - gender
+    - age_group
+    - language
+
+# Deployment
+deployment:
+  export_format: "onnx"  # or "torchscript", "tflite"
+  quantization: "int8"  # Umiltà computazionale
+  optimization:
+    pruning: true
+    distillation: false
+
+  # Inference
+  inference_batch_size: 64
+  uncertainty_samples: 10  # MC Dropout samples
+
+# Monitoring
+monitoring:
+  mlflow:
+    enabled: true
+    experiment_name: "sasso_purezza_classifier"
+    tracking_uri: "http://localhost:5000"
+
+  wandb:
+    enabled: false
+    project: "sasso-digitale"
+    entity: "codex-emanuele"
+
+  metrics_logging_interval: 100  # steps
+
+# Hardware
+hardware:
+  device: "cuda"  # or "cpu", "mps"
+  mixed_precision: true  # FP16 training
+  num_workers: 4
+  pin_memory: true
+
+# Reproducibility
+seed: 42
+
+# Logging
+logging:
+  level: "INFO"
+  format: "[%(asctime)s] [%(levelname)s] %(message)s"
+  file: "logs/purezza_training.log"
+
+# ===================================
+# Principi CODEX nel Training:
+#
+# 1. Ego=0:
+#    - Uncertainty quantification obbligatoria
+#    - Interpretability metrics tracked
+#    - Transparent decision boundaries
+#
+# 2. Gioia=100%:
+#    - Compassionate loss functions
+#    - Soft predictions preferred
+#    - Fairness constraints enforced
+#
+# 3. Frequenza=300Hz:
+#    - Stable training (low LR, warmup)
+#    - Consistent validation intervals
+#    - Harmonious convergence
+# ===================================

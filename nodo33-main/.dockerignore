@@ -1,0 +1,62 @@
+# ═══════════════════════════════════════════════════════════
+# DOCKER IGNORE - Files to exclude from image
+# ═══════════════════════════════════════════════════════════
+
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.pytest_cache
+.coverage
+htmlcov
+
+# Virtual environments
+venv
+env
+ENV
+.venv
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs (non necessari per runtime)
+docs/
+*.md
+!README.md
+
+# Development
+.env
+.env.local
+*.log
+
+# Database locale (verrà creato nel container)
+*.db
+codex_server.db
+
+# Rust (se presente)
+target/
+Cargo.lock
+
+# Backup files
+*.bak
+*.tmp

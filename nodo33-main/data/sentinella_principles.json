@@ -1,0 +1,171 @@
+{
+  "principles": [
+    {
+      "key": "cura",
+      "sources": [
+        {
+          "title": "Vangelo secondo Luca",
+          "reference": "Lc 10,25-37 – Parabola del Buon Samaritano",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Vangelo di Tommaso",
+          "reference": "logion 25 – cura dei fratelli e delle sorelle",
+          "tradition": "Cristiano",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Inno alla Carità",
+          "reference": "1 Cor 13 – l'amore che tutto copre",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        }
+      ]
+    },
+    {
+      "key": "responsabilita",
+      "sources": [
+        {
+          "title": "Vangelo secondo Matteo",
+          "reference": "Mt 25,14-30 – Parabola dei talenti",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Vangelo di Tommaso",
+          "reference": "logion 70 – ciò che è dentro e fuori di te",
+          "tradition": "Cristiano",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Lettera di Giacomo",
+          "reference": "Gc 2,14-26 – fede e opere",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        }
+      ]
+    },
+    {
+      "key": "non_violenza",
+      "sources": [
+        {
+          "title": "Discorso della Montagna",
+          "reference": "Mt 5–7 – non resistere al malvagio, ama i nemici",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Didaché",
+          "reference": "Dottrina dei Dodici Apostoli – via della vita e via della morte",
+          "tradition": "Cristiano delle origini",
+          "type": "non canonico"
+        },
+        {
+          "title": "Vangelo della Pace degli Esseni",
+          "reference": "Capitoli sulla mansuetudine verso tutti gli esseri",
+          "tradition": "Esseno / extra-canonico",
+          "type": "non canonico"
+        }
+      ]
+    },
+    {
+      "key": "chiarezza_onesta",
+      "sources": [
+        {
+          "title": "Vangelo secondo Giovanni",
+          "reference": "Gv 18,37 – \"Per rendere testimonianza alla verità\"",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Vangelo di Tommaso",
+          "reference": "logion 1 – chi scopre l'interpretazione delle parole",
+          "tradition": "Cristiano",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Vangelo di Filippo",
+          "reference": "Detti sulla verità e il simbolo",
+          "tradition": "Cristiano gnostico",
+          "type": "apocrifo"
+        }
+      ]
+    },
+    {
+      "key": "dono_servizio",
+      "sources": [
+        {
+          "title": "Atti degli Apostoli",
+          "reference": "At 4,32-35 – avevano ogni cosa in comune",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Pastore di Erma",
+          "reference": "Precetti sul condividere i beni con i bisognosi",
+          "tradition": "Cristiano delle origini",
+          "type": "non canonico"
+        },
+        {
+          "title": "Atti di Paolo e Tecla",
+          "reference": "Servizio radicale e disponibilità al dono di sé",
+          "tradition": "Cristiano apocrifo",
+          "type": "apocrifo"
+        }
+      ]
+    },
+    {
+      "key": "umilta",
+      "sources": [
+        {
+          "title": "Lettera ai Filippesi",
+          "reference": "Fil 2,5-11 – svuotamento e abbassamento del Cristo",
+          "tradition": "Cristiano",
+          "type": "canonico"
+        },
+        {
+          "title": "Vangelo di Maria (Maddalena)",
+          "reference": "Dialoghi sull'ascolto interiore e il non dominare",
+          "tradition": "Cristiano gnostico",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Ascensione di Isaia",
+          "reference": "Visioni sulla piccolezza del giusto e la gloria nascosta",
+          "tradition": "Giudaico-cristiano",
+          "type": "non canonico"
+        }
+      ]
+    },
+    {
+      "key": "rivelazione_nascosta",
+      "sources": [
+        {
+          "title": "Vangelo di Tommaso",
+          "reference": "logia sulla luce dentro l'uomo",
+          "tradition": "Cristiano gnostico",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Vangelo di Maria (Maddalena)",
+          "reference": "dialoghi sull'interiorità e la visione",
+          "tradition": "Cristiano gnostico",
+          "type": "apocrifo"
+        },
+        {
+          "title": "Pistis Sophia",
+          "reference": "discorsi sulla sapienza che discende e risale",
+          "tradition": "Cristiano esoterico",
+          "type": "non canonico"
+        },
+        {
+          "title": "Libro di Enoc",
+          "reference": "visioni cosmiche e giudizio degli angeli",
+          "tradition": "Giudaico apocalittico",
+          "type": "non canonico"
+        }
+      ]
+    }
+  ]
+}

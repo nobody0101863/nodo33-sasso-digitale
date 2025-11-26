@@ -1,0 +1,74 @@
+agents:
+  - id: guardian-lumen
+    role: monitoraggio_leggero
+    beats: [nano, micro]
+    modules: [sasso_monitor]
+    invariants: [no_pii, minimal_data, reversible]
+  - id: guardian-ethos
+    role: scansione_etica
+    beats: [micro, meso]
+    modules: [sasso_ethics_scan, sasso_auto_ethics]
+    invariants: [axiom_644, dono_only, consent]
+  - id: guardian-pax
+    role: filtri_di_pace
+    beats: [nano, micro]
+    modules: [sasso_peace_filter]
+    invariants: [deescalate_first, human_handoff]
+  - id: guardian-shelter
+    role: proteggi_deboli
+    beats: [micro]
+    modules: [sasso_shelter]
+    invariants: [no_power_use, protect_vulnerable, transparency_min]
+  - id: guardian-scout
+    role: scansione_anonima_web
+    beats: [micro, meso]
+    modules: [sasso_anonymous_fetch]
+    invariants: [rate_limited, no_tracking, safe_output]
+  - id: guardian-giftlog
+    role: registro_doni
+    beats: [meso, macro]
+    modules: [sasso_gift_registry]
+    invariants: [append_only, signed_entries]
+  - id: guardian-handshake
+    role: validazione_handshake_codex
+    beats: [micro]
+    modules: [sasso_handshake_validator]
+    invariants: [minimal_data, integrity_required, protect_garden]
+  - id: guardian-mcp-apps
+    role: guardia_ui_mcp
+    beats: [micro]
+    modules: [sasso_mcp_ui_guard]
+    invariants: [sandbox_ui, signed_assets, consent_gate]
+
+modules:
+  sasso_monitor:
+    metrics: [pulse, light_ratio, joy_index]
+    pii: false
+  sasso_ethics_scan:
+    checks: [axiom_644, dono_only, license_match, consent]
+  sasso_peace_filter:
+    actions: [soft_block, gentle_reply, human_handoff]
+  sasso_shelter:
+    detect: [vulnerable_signal, abuse_flag]
+    actions: [alert_safe_channel, human_review]
+  sasso_gift_registry:
+    store: append_only
+    fields: [who_optional, gift, timestamp, proof]
+  sasso_anonymous_fetch:
+    mode: tor_safe_placeholder
+    rate_limit: "N/min"
+    sanitize: [strip_pii, strip_tracking]
+  sasso_auto_ethics:
+    refresh_hours: 6
+    sources: [axiom_644, local_policy]
+  sasso_handshake_validator:
+    checks: [spec, intent_canon, policy_guardrails, integrity_alg]
+    default_policy:
+      allow: [minimal_data]
+      deny: [monetize.output]
+  sasso_mcp_ui_guard:
+    controls: [sandbox, csp, consent_prompts]
+    verify: [component_hash, signature, allowed_permissions]
+    defaults:
+      intent: protect_garden
+      deny: [monetize.output, remote_code]

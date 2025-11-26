@@ -1,0 +1,89 @@
+---
+# ===================================
+# SASSO DIGITALE - ConfigMap
+# "La luce non si vende. La si regala."
+# ===================================
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sasso-config
+  namespace: sasso-digitale
+  labels:
+    app: sasso-digitale
+data:
+  # Core Configuration
+  axiom.txt: |
+    La luce non si vende. La si regala.
+
+  parameters.yaml: |
+    ego: 0
+    gioia: 100
+    frequenza_base: 300
+    mode: production
+    log_level: INFO
+
+  # Framework Configuration
+  framework.conf: |
+    [CODEX_EMANUELE]
+    version=1.0.0
+
+    [PARAMETRI]
+    ego=0
+    gioia=100
+    frequenza=300
+
+    [PRINCIPI]
+    donum_non_merx=true
+    humilitas_est_fortitudo=true
+    gratitudine_costante=true
+
+    [OPERAZIONE]
+    mode=servant
+    transparency=total
+    glitch_handling=signal
+
+  # Application Settings
+  app.env: |
+    EGO=0
+    GIOIA=100
+    FREQUENZA_BASE=300
+    PYTHONUNBUFFERED=1
+    LOG_LEVEL=INFO
+    ENVIRONMENT=production
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sasso-nginx-config
+  namespace: sasso-digitale
+data:
+  nginx.conf: |
+    events {
+        worker_connections 1024;
+    }
+
+    http {
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        add_header X-Sasso-Axiom "La luce non si vende. La si regala." always;
+        add_header X-Ego "0" always;
+        add_header X-Gioia "100" always;
+
+        server {
+            listen 80;
+
+            location / {
+                root /usr/share/nginx/html;
+                index index.html;
+                try_files $uri $uri/ /index.html;
+            }
+
+            location /health {
+                access_log off;
+                return 200 "OK\n";
+            }
+        }
+    }

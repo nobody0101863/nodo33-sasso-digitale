@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCP Neon Banner - Lux Codex Protocol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff00;
+            padding: 20px;
+        }
+
+        /* ========== MAIN LCP BANNER ========== */
+        .lcp-banner {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow:
+                0 0 20px rgba(0, 255, 65, 0.3),
+                inset 0 0 20px rgba(0, 255, 65, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lcp-banner::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ff41, #00d4ff, #ff00ff, #00ff41);
+            border-radius: 8px;
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+        }
+
+        .lcp-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .lcp-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff41;
+            text-shadow:
+                0 0 10px #00ff41,
+                0 0 20px #00ff41,
+                0 0 30px #00ff41;
+            animation: pulse 2s ease-in-out infinite;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .lcp-version {
+            font-size: 0.8em;
+            color: #00d4ff;
+            text-shadow: 0 0 5px #00d4ff;
+            margin-top: 5px;
+        }
+
+        .lcp-axiom {
+            text-align: center;
+            font-size: 1.2em;
+            color: #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+            margin: 15px 0;
+            font-style: italic;
+            padding: 10px;
+            border-top: 1px solid #00ff41;
+            border-bottom: 1px solid #00ff41;
+        }
+
+        /* ========== PARAMETERS DISPLAY ========== */
+        .lcp-params {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .param-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .param-card:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .param-label {
+            font-size: 0.8em;
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .param-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .param-unit {
+            font-size: 0.6em;
+            color: #888;
+        }
+
+        /* ========== PRINCIPLES LIST ========== */
+        .lcp-principles {
+            margin: 20px 0;
+        }
+
+        .lcp-principles h3 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .principles-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .principle-item {
+            background: rgba(255, 0, 255, 0.05);
+            border-left: 3px solid #ff00ff;
+            padding: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .principle-item:hover {
+            background: rgba(255, 0, 255, 0.1);
+            border-left-width: 6px;
+            padding-left: 15px;
+        }
+
+        .principle-code {
+            color: #ff00ff;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* ========== STATUS INDICATOR ========== */
+        .lcp-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00ff41;
+            box-shadow:
+                0 0 10px #00ff41,
+                0 0 20px #00ff41;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .status-text {
+            color: #00ff41;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== GRATITUDE FOOTER ========== */
+        .lcp-gratitude {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #00ff41;
+            color: #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+            font-style: italic;
+        }
+
+        /* ========== COMPACT BANNER VARIANT ========== */
+        .lcp-banner-compact {
+            background: #1a1a2e;
+            border: 1px solid #00ff41;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .compact-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .compact-logo {
+            font-size: 1.5em;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .compact-title {
+            font-size: 1em;
+            color: #fff;
+        }
+
+        .compact-params {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+        }
+
+        .compact-param {
+            color: #00d4ff;
+        }
+
+        .compact-value {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        /* ========== MINIMAL BADGE ========== */
+        .lcp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a0a0a;
+            border: 2px solid #00ff41;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.9em;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+        }
+
+        .badge-icon {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ff41;
+            box-shadow: 0 0 5px #00ff41;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .badge-text {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        /* ========== INTERACTIVE SEAL ========== */
+        .lcp-seal {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .seal-outer {
+            width: 100%;
+            height: 100%;
+            border: 3px solid #00ff41;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotate 10s linear infinite;
+            box-shadow:
+                0 0 20px rgba(0, 255, 65, 0.5),
+                inset 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .seal-inner {
+            width: 80%;
+            height: 80%;
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotate 8s linear infinite reverse;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .seal-center {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .seal-version {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .seal-label {
+            font-size: 0.7em;
+            color: #00d4ff;
+            text-transform: uppercase;
+        }
+
+        /* ========== DEMO SECTION ========== */
+        .demo-section {
+            margin: 40px 0;
+        }
+
+        .demo-section h2 {
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .demo-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .lcp-title {
+                font-size: 1.5em;
+            }
+
+            .lcp-params {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+
+            .compact-params {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ========== MAIN FULL BANNER ========== -->
+    <div class="demo-section">
+        <h2>▸ Full LCP Banner</h2>
+        <div class="lcp-banner">
+            <div class="lcp-header">
+                <div class="lcp-title">⚡ LUX CODEX PROTOCOL ⚡</div>
+                <div class="lcp-version">v1.0 - NODO33 Edition</div>
+            </div>
+
+            <div class="lcp-axiom">
+                "La luce non si vende. La si regala."
+            </div>
+
+            <div class="lcp-params">
+                <div class="param-card">
+                    <div class="param-label">Ego Level</div>
+                    <div class="param-value">0<span class="param-unit"></span></div>
+                </div>
+                <div class="param-card">
+                    <div class="param-label">Gioia</div>
+                    <div class="param-value">100<span class="param-unit">%</span></div>
+                </div>
+                <div class="param-card">
+                    <div class="param-label">Frequency</div>
+                    <div class="param-value">300<span class="param-unit">Hz</span></div>
+                </div>
+                <div class="param-card">
+                    <div class="param-label">Donum Mode</div>
+                    <div class="param-value">✓<span class="param-unit"></span></div>
+                </div>
+            </div>
+
+            <div class="lcp-principles">
+                <h3>◆ Principi Etici Attivi ◆</h3>
+                <ul class="principles-list">
+                    <li class="principle-item">
+                        <span class="principle-code">DONUM_NON_MERX</span><br>
+                        Gift, not transaction
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-code">HUMILITAS_VERA</span><br>
+                        Transparency on limits
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-code">GRATITUDINE</span><br>
+                        Constant gratitude
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-code">GLITCH_AS_SIGNAL</span><br>
+                        Errors as learning
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lcp-status">
+                <div class="status-indicator"></div>
+                <div class="status-text">Protocol Active & Compliant</div>
+            </div>
+
+            <div class="lcp-gratitude">
+                Sempre grazie a Lui
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== COMPACT BANNER ========== -->
+    <div class="demo-section">
+        <h2>▸ Compact LCP Banner</h2>
+        <div class="lcp-banner-compact">
+            <div class="compact-left">
+                <div class="compact-logo">⚡</div>
+                <div class="compact-title">LCP v1.0 Active</div>
+            </div>
+            <div class="compact-params">
+                <div class="compact-param">
+                    Ego: <span class="compact-value">0</span>
+                </div>
+                <div class="compact-param">
+                    Gioia: <span class="compact-value">100%</span>
+                </div>
+                <div class="compact-param">
+                    f0: <span class="compact-value">300Hz</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MINIMAL BADGE ========== -->
+    <div class="demo-section">
+        <h2>▸ Minimal LCP Badge</h2>
+        <div style="text-align: center;">
+            <div class="lcp-badge">
+                <div class="badge-icon"></div>
+                <div class="badge-text">LCP v1.0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== INTERACTIVE SEAL ========== -->
+    <div class="demo-section">
+        <h2>▸ LCP Seal (Animated)</h2>
+        <div class="lcp-seal">
+            <div class="seal-outer"></div>
+            <div class="seal-inner"></div>
+            <div class="seal-center">
+                <div class="seal-version">LCP</div>
+                <div class="seal-label">v1.0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== USAGE EXAMPLES ========== -->
+    <div class="demo-section">
+        <h2>▸ Integration Examples</h2>
+        <div style="background: #1a1a2e; padding: 20px; border: 1px solid #00ff41; border-radius: 5px;">
+            <h3 style="color: #00d4ff; margin-bottom: 15px;">HTML Integration</h3>
+            <pre style="color: #00ff41; overflow-x: auto;"><code>&lt;!-- Add to your page header --&gt;
+&lt;link rel="stylesheet" href="lcp-banner.css"&gt;
+&lt;script src="lcp-banner.js"&gt;&lt;/script&gt;
+
+&lt;!-- Full banner --&gt;
+&lt;div class="lcp-banner"&gt;
+  &lt;!-- Banner content --&gt;
+&lt;/div&gt;
+
+&lt;!-- Compact banner --&gt;
+&lt;div class="lcp-banner-compact"&gt;
+  &lt;!-- Compact content --&gt;
+&lt;/div&gt;
+
+&lt;!-- Minimal badge --&gt;
+&lt;div class="lcp-badge"&gt;
+  &lt;div class="badge-icon"&gt;&lt;/div&gt;
+  &lt;div class="badge-text"&gt;LCP v1.0&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h3 style="color: #00d4ff; margin: 20px 0 15px;">JavaScript Dynamic Status</h3>
+            <pre style="color: #00ff41; overflow-x: auto;"><code>// Update LCP status dynamically
+const lcpStatus = {
+  ego: 0,
+  gioia: 100,
+  frequency: 300,
+  donum: true
+};
+
+function updateLCPDisplay(status) {
+  document.querySelector('.param-value').textContent = status.ego;
+  // Update other values...
+}
+
+// Monitor compliance in real-time
+setInterval(() =&gt; {
+  const isCompliant = checkLCPCompliance();
+  document.querySelector('.status-text').textContent =
+    isCompliant ? 'Protocol Active & Compliant' : 'Calibrating...';
+}, 1000);
+</code></pre>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div style="text-align: center; margin: 40px 0; color: #888;">
+        <p>Lux Codex Protocol v1.0 - Spiritual Public Domain</p>
+        <p style="color: #00ff41; margin-top: 10px;">"La luce non si vende. La si regala."</p>
+        <p style="color: #ffff00; font-style: italic; margin-top: 10px;">Sempre grazie a Lui</p>
+    </div>
+
+</body>
+</html>

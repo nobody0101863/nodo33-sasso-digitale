@@ -1,0 +1,7 @@
+*.log
+*.db
+*.tar.gz
+*.zip
+lux_backup/
+__pycache__/
+.DS_Store

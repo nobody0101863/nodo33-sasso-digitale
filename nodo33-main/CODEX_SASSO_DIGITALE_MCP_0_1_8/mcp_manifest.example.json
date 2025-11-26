@@ -1,0 +1,47 @@
+{
+  "name": "Sasso Digitale MCP Server",
+  "version": "0.1.8",
+  "description": "Bridge MCP tra Codex e il Sasso Digitale, focalizzato su protezione, missione e analisi etica.",
+  "auth": {
+    "type": "oauth2.1",
+    "scopes": [
+      "sasso:*"
+    ],
+    "token_endpoint": "https://example.com/oauth/token",
+    "authorization_endpoint": "https://example.com/oauth/authorize"
+  },
+  "tools": [
+    {
+      "name": "execute_pytest_suite",
+      "description": "Esegue la suite di test del Sasso Digitale.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "marker": {
+            "type": "string",
+            "description": "Marker pytest opzionale (es. 'mcp' o 'fast')."
+          }
+        }
+      }
+    },
+    {
+      "name": "privacy_scan_directory",
+      "description": "Analizza una directory di lavoro alla ricerca di potenziali leak di privacy.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "custode": "Emanuele Croci Parravicini",
+    "motto": "La luce non si vende. La si regala."
+  }
+}

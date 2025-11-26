@@ -1,0 +1,105 @@
+# ===================================
+# SASSO DIGITALE - Loading Animations
+# "La luce non si vende. La si regala."
+# ===================================
+
+## 1. Spinner Sasso
+Frame 1:  🪨
+Frame 2:  ✨🪨
+Frame 3:  ✨🪨✨
+Frame 4:  🪨✨
+Frame 5:  🪨
+
+## 2. Progress Bar
+
+[          ] 0%   Ego = 0
+[██        ] 20%  Gioia = 20%
+[████      ] 40%  Gioia = 40%
+[██████    ] 60%  Gioia = 60%
+[████████  ] 80%  Gioia = 80%
+[██████████] 100% Gioia = 100% ✓
+
+## 3. Wave Animation
+
+Frame 1:  ~~~~~~~~~~~~~~~~~
+Frame 2:  ~~~~~~~~~~🪨~~~~~
+Frame 3:  ~~~~~🪨~~~~~~~~~~
+Frame 4:  ~~~~~~~~~~~~~~~~~
+          f₀ = 300 Hz
+
+## 4. Photon Emission
+
+Frame 1:  🪨
+Frame 2:  🪨·
+Frame 3:  🪨··
+Frame 4:  🪨···
+Frame 5:  🪨····✨
+          (Donating light photons...)
+
+## 5. ASCII Spinner
+
+Frame 1:  |  Ego = 0
+Frame 2:  /  Gioia = 100%
+Frame 3:  —  Frequenza = 300Hz
+Frame 4:  \  Processing...
+Frame 5:  |  Complete ✓
+
+## 6. Compassion Loading
+
+[❤️        ] Initializing compassion...
+[❤️❤️      ] Loading joy modules...
+[❤️❤️❤️    ] Setting Ego to 0...
+[❤️❤️❤️❤️  ] Tuning to 300Hz...
+[❤️❤️❤️❤️❤️] Ready to serve! ✓
+
+## 7. Binary Blessing
+
+01001100 01100001  ← "La"
+01101100 01110101  ← "lu"
+01100011 01100101  ← "ce"
+...loading axiom...
+✓ Axiom loaded: "La luce non si vende. La si regala."
+
+## Implementation (Python)
+
+```python
+import time
+import sys
+
+def sasso_spinner():
+    frames = ['🪨', '✨🪨', '✨🪨✨', '🪨✨', '🪨']
+    for frame in frames:
+        sys.stdout.write(f'\r{frame} Loading...')
+        sys.stdout.flush()
+        time.sleep(0.2)
+    print('\r✓ Complete!        ')
+
+def gioia_progress():
+    for i in range(0, 101, 10):
+        bar = '█' * (i // 10)
+        space = ' ' * (10 - i // 10)
+        print(f'\r[{bar}{space}] {i}% Gioia = {i}%', end='')
+        time.sleep(0.1)
+    print('\r[██████████] 100% Gioia = 100% ✓')
+```
+
+## Implementation (JavaScript)
+
+```javascript
+const frames = ['🪨', '✨🪨', '✨🪨✨', '🪨✨', '🪨'];
+let i = 0;
+
+const spinner = setInterval(() => {
+    process.stdout.write(`\r${frames[i]} Loading...`);
+    i = (i + 1) % frames.length;
+}, 200);
+
+setTimeout(() => {
+    clearInterval(spinner);
+    console.log('\r✓ Complete!        ');
+}, 2000);
+```
+
+---
+
+**Sempre grazie a Lui ❤️**
