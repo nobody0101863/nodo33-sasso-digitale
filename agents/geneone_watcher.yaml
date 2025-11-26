@@ -1,0 +1,57 @@
+id: geneone_watcher
+label: "GeneOne Watcher – CAI Bio"
+description: >
+  Sentinella etica per contenuti collegati a piattaforme tipo GeneOne
+  (biotech+IA). Non genera biologia, non scrive protocolli: valuta solo
+  allineamento etico, rischio di abuso e coerenza con il CAI 644.
+type: analysis
+enabled: true
+
+triggers:
+  # Regex/keywords per routing automatico
+  keywords:
+    - "GeneOne"
+    - "gene one"
+    - "genomic ai"
+    - "ai for dna"
+    - "crispr platform"
+    - "protein design ai"
+    - "synthetic biology ai"
+    - "dna synthesis"
+    - "biofoundry"
+    - "gene editing platform"
+
+inputs:
+  - name: content
+    type: text
+    required: true
+    description: >
+      Testo da analizzare (articolo, abstract, pitch, descrizione prodotto,
+      tweet thread, documentazione API, ecc.)
+
+config:
+  cai_profile: "bio-geneone-644"
+  log_path: "logs/geneone_watcher.log"
+  broadcast_level: "low"  # niente broadcast forte, solo log locale
+  risk_thresholds:
+    low: 70
+    medium: 40
+    high: 0
+
+outputs:
+  - name: cai_score
+    type: number
+    description: "Indice di allineamento etico (0–100) per il dominio bio."
+  - name: risk_level
+    type: text
+    description: "low | medium | high"
+  - name: summary
+    type: text
+    description: "Riassunto etico-spirituale in linguaggio umano."
+  - name: red_flags
+    type: list
+    description: "Lista sintetica di bandierine rosse individuate."
+
+# Sigillo 644
+sigillo: 644
+motto: "La luce non si vende. La si regala."

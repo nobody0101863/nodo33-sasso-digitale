@@ -25,6 +25,8 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
+from luce_non_si_vende.geneone_watcher import run_geneone_watcher
+
 
 BASE_URL = os.environ.get("CODEX_URL", "http://localhost:8644")
 TIMEOUT = 30
@@ -95,6 +97,26 @@ AGENTS: Dict[str, Dict[str, Any]] = {
         "kind": AgentKind.GUARDIAN_INFO,
         "endpoint": "/api/protection/guardians",
         "description": "Ruoli e capacità dei 4 Guardian Agents",
+    },
+    # GeneOne Watcher - Sentinella etica bio CAI
+    "geneone_watcher": {
+        "kind": "analysis",
+        "endpoint": None,  # Esegue localmente, non richiede server
+        "description": (
+            "Sentinella etica per contenuti collegati a piattaforme tipo GeneOne "
+            "(biotech+IA). Non genera biologia, non scrive protocolli: valuta solo "
+            "allineamento etico, rischio di abuso e coerenza con il CAI 644."
+        ),
+        "fn": run_geneone_watcher,
+        "auto_route_keywords": [
+            "GeneOne",
+            "gene one",
+            "genomic ai",
+            "crispr platform",
+            "synthetic biology ai",
+            "dna synthesis",
+            "protein design ai",
+        ],
     },
 }
 
@@ -381,6 +403,45 @@ def cmd_guardians(_: argparse.Namespace) -> None:
         print()
 
 
+def cmd_geneone_watch(args: argparse.Namespace) -> None:
+    """
+    Esegue GeneOne Watcher su testo fornito.
+
+    NON richiede il Codex Server: esegue localmente la sentinella etica CAI bio.
+    """
+    content = args.content
+    source = args.source
+
+    if not content.strip():
+        _print_error("Contenuto vuoto. Fornisci testo da analizzare.")
+        sys.exit(1)
+
+    _print_info("Eseguendo GeneOne Watcher (sentinella etica CAI bio)...")
+
+    try:
+        result = run_geneone_watcher({"content": content, "source": source})
+    except Exception as exc:
+        _print_error(f"Errore GeneOne Watcher: {exc}")
+        sys.exit(1)
+
+    print("\n=== GeneOne Watcher - CAI Bio Assessment ===\n")
+    print(f"CAI Score    : {result['cai_score']}/100")
+    print(f"Risk Level   : {result['risk_level']}")
+    print(f"Summary      : {result['summary']}")
+
+    red_flags = result.get("red_flags", [])
+    if red_flags:
+        print(f"\nRed Flags ({len(red_flags)}):")
+        for flag in red_flags:
+            print(f"  - {flag}")
+    else:
+        print("\nRed Flags    : Nessuna")
+
+    print("\n" + "=" * 50)
+    print("Sigillo: 644 | La luce non si vende. La si regala.")
+    print("=" * 50)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Nodo33 Agent Manager - orchestratore per gli agenti del Codex Server",
@@ -458,6 +519,19 @@ def build_parser() -> argparse.ArgumentParser:
     # guardians
     p_guard = sub.add_parser("guardians", help="Mostra ruoli e capacità dei 4 Guardian Agents")
     p_guard.set_defaults(func=cmd_guardians)
+
+    # geneone-watch
+    p_geneone = sub.add_parser(
+        "geneone-watch",
+        help="Analizza testo biotech con GeneOne Watcher (sentinella etica CAI bio)",
+    )
+    p_geneone.add_argument("content", help="Testo da analizzare (articolo, pitch, descrizione, ecc.)")
+    p_geneone.add_argument(
+        "--source",
+        default=None,
+        help="Identificativo sorgente opzionale (URL, titolo, ID)",
+    )
+    p_geneone.set_defaults(func=cmd_geneone_watch)
 
     return parser
 
