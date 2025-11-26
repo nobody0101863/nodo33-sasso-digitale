@@ -55,6 +55,7 @@ torch_env/
 
 # Logs
 *.log
+logs/
 /tmp/
 *.pid
 

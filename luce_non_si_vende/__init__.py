@@ -14,6 +14,12 @@ from .bible_commandments import (
     format_cai_report,
     get_cai_tier,
 )
+from .geneone_watcher import (
+    GeneOneAssessment,
+    GeneOneWatcher,
+    run_geneone_watcher,
+    assess_bio_content,
+)
 
 __all__ = [
     # Core luce
@@ -30,5 +36,10 @@ __all__ = [
     "compute_indices",
     "format_cai_report",
     "get_cai_tier",
+    # GeneOne Watcher - Sentinella Bio CAI
+    "GeneOneAssessment",
+    "GeneOneWatcher",
+    "run_geneone_watcher",
+    "assess_bio_content",
 ]
 
