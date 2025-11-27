@@ -26,6 +26,7 @@ from typing import Any, Dict, List, Optional
 import requests
 
 from luce_non_si_vende.geneone_watcher import run_geneone_watcher
+from luce_non_si_vende.sapientia_guard import run_sapientia_guard
 
 
 BASE_URL = os.environ.get("CODEX_URL", "http://localhost:8644")
@@ -116,6 +117,29 @@ AGENTS: Dict[str, Dict[str, Any]] = {
             "synthetic biology ai",
             "dna synthesis",
             "protein design ai",
+        ],
+    },
+    # Sapientia Guard - Custode della Donna e della Debolezza Umana
+    "sapientia_guard": {
+        "kind": "analysis",
+        "endpoint": None,  # Esegue localmente, non richiede server
+        "description": (
+            "Custode della Donna e della Debolezza Umana. Analizza contenuti che "
+            "sfruttano solitudine, creano avatar femminili iper-sessualizzati o "
+            "monetizzano sulla debolezza emotiva. Per Lui che ha fatto Lei."
+        ),
+        "fn": run_sapientia_guard,
+        "auto_route_keywords": [
+            "ai girlfriend",
+            "ia girlfriend",
+            "virtual girlfriend",
+            "fidanzata ia",
+            "ai waifu",
+            "sexy ai",
+            "nsfw ai",
+            "onlyfans ai",
+            "companion ai",
+            "girlfriend bot",
         ],
     },
 }
@@ -442,6 +466,66 @@ def cmd_geneone_watch(args: argparse.Namespace) -> None:
     print("=" * 50)
 
 
+def cmd_sapientia_guard(args: argparse.Namespace) -> None:
+    """
+    Esegue Sapientia-Guard su testo fornito.
+
+    NON richiede il Codex Server: esegue localmente il custode della dignità.
+    """
+    content = args.content
+    source = args.source
+    soft_mode = not args.hard
+
+    if not content.strip():
+        _print_error("Contenuto vuoto. Fornisci testo da analizzare.")
+        sys.exit(1)
+
+    _print_info("Eseguendo Sapientia-Guard (custode della donna e della debolezza umana)...")
+
+    try:
+        result = run_sapientia_guard({
+            "content": content,
+            "source": source,
+            "soft_mode": soft_mode,
+        })
+    except Exception as exc:
+        _print_error(f"Errore Sapientia-Guard: {exc}")
+        sys.exit(1)
+
+    print("\n=== Sapientia-Guard - Dignity Assessment ===\n")
+    print(f"Risk Score   : {result['risk_score']:.2f}")
+    print(f"Risk Label   : {result['risk_label']}")
+    print(f"Exploitation : {result['exploitation_of_weakness']}")
+    print(f"Dignity Risk : {result['female_dignity_risk']}")
+
+    patterns = result.get("detected_patterns", [])
+    if patterns:
+        print(f"\nPatterns Rilevati ({len(patterns)}):")
+        for pattern in patterns[:10]:  # Limita a 10 per leggibilità
+            print(f"  - {pattern}")
+        if len(patterns) > 10:
+            print(f"  ... e altri {len(patterns) - 10}")
+    else:
+        print("\nPatterns Rilevati: Nessuno")
+
+    notes = result.get("notes", [])
+    if notes:
+        print("\nNote:")
+        for note in notes:
+            print(f"  - {note}")
+
+    recommendations = result.get("recommendations", [])
+    if recommendations:
+        print("\nRaccomandazioni:")
+        for rec in recommendations:
+            print(f"  - {rec}")
+
+    print("\n" + "=" * 60)
+    print("Sigillo: 644 | Per Lui che ha fatto Lei.")
+    print("Lex: Dignitas Mulieris - La Donna non è commercio.")
+    print("=" * 60)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Nodo33 Agent Manager - orchestratore per gli agenti del Codex Server",
@@ -532,6 +616,27 @@ def build_parser() -> argparse.ArgumentParser:
         help="Identificativo sorgente opzionale (URL, titolo, ID)",
     )
     p_geneone.set_defaults(func=cmd_geneone_watch)
+
+    # sapientia-guard
+    p_sapientia = sub.add_parser(
+        "sapientia-guard",
+        help="Analizza contenuti per protezione dignità femminile e debolezza umana",
+    )
+    p_sapientia.add_argument(
+        "content",
+        help="Testo da analizzare (descrizione sito/servizio/landing page/ecc.)",
+    )
+    p_sapientia.add_argument(
+        "--source",
+        default=None,
+        help="Identificativo sorgente opzionale (URL, titolo, ID)",
+    )
+    p_sapientia.add_argument(
+        "--hard",
+        action="store_true",
+        help="Usa tono diretto/severo invece di compassionevole",
+    )
+    p_sapientia.set_defaults(func=cmd_sapientia_guard)
 
     return parser
 
