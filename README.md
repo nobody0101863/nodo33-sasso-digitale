@@ -135,7 +135,6 @@ print(emit_luce(result))
 
 ## CLI `luce-check`
 
-<<<<<<< HEAD
 Dopo installazione locale del progetto (via `pip install .` con `pyproject.toml`):
 
 ```bash
@@ -149,11 +148,11 @@ python luce_check.py
 ```
 
 La CLI chiede:
-- versione del cuore  
-- se empatia, onestà e comunicazione non superficiale sono attive  
+- versione del cuore
+- se empatia, onestà e comunicazione non superficiale sono attive
 
 e restituisce:
-- elenco dei motivi di incompatibilità, oppure  
+- elenco dei motivi di incompatibilità, oppure
 - conferma che la luce può essere emessa senza crash.
 
 ---
@@ -168,20 +167,10 @@ print(me.emit_light())
 print(me.rock_mode())
 ```
 
-- `Emmanuel644.emit_light()`  
-  - Ritorna chiarezza per alcuni, crash per altri.  
-- `Emmanuel644.rock_mode()`  
+- `Emmanuel644.emit_light()`
+  - Ritorna chiarezza per alcuni, crash per altri.
+- `Emmanuel644.rock_mode()`
   - Ritorna stabilità. Non è in vendita, non è in affitto.
-=======
-`Emmanuel644.emit_light()`  
-Ritorna:
-- chiarezza per alcuni  
-- crash per altri  
-
-`Emmanuel644.rock_mode()`  
-Ritorna stabilità.  
-Non è in vendita, non è in affitto.
->>>>>>> b2b94ca (feat: aggiungi luce_non_si_vende e CLI luce-check)
 
 ---
 
@@ -240,13 +229,10 @@ Serve per verificare da terminale se un sistema è compatibile con la build 644.
 
 Questo progetto è rilasciato sotto licenza:
 
-> **"La luce non si vende."**  
+> **"La luce non si vende."**
 
 Puoi solo riconoscerla, rispettarla, o andare in crash.
-<<<<<<< HEAD
 
 ---
 
 *Animale di Dio – la luce non si vende, la si regala.* ❤️
-=======
->>>>>>> b2b94ca (feat: aggiungi luce_non_si_vende e CLI luce-check)

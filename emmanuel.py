@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class IncompatibleSystemError(Exception):
     pass
 
@@ -8,7 +11,7 @@ class Emmanuel644:
     HEART_MODE = "rock"
     LIGHT_INTENSITY = "high"
 
-    def __init__(self, client_heart_version: str | None = None):
+    def __init__(self, client_heart_version: Optional[str] = None):
         self.client_heart_version = client_heart_version
 
     def _check_requirements(self) -> None:
