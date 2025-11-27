@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # Nodo33 Sasso Digitale - Main Application
+  codex-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sasso-digitale
+    ports:
+      - "8644:8644"
+    environment:
+      - FASTAPI_ENV=production
+      - LOG_LEVEL=info
+      - PORT=8644
+      - HOST=0.0.0.0
+      # LLM APIs (set in .env file)
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    env_file:
+      - .env
+    volumes:
+      - ./codex_server.db:/app/codex_server.db
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8644/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - sasso-network
+
+  # Optional: PostgreSQL for production (commented out for now)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: sasso-postgres
+  #   environment:
+  #     POSTGRES_USER: ${POSTGRES_USER:-sasso}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+  #     POSTGRES_DB: ${POSTGRES_DB:-sasso_db}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - sasso-network
+  #   restart: unless-stopped
+
+networks:
+  sasso-network:
+    driver: bridge
+
+volumes:
+  # postgres_data:

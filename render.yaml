@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: sasso-digitale
+    env: docker
+    plan: free
+
+    # Health check
+    healthCheckPath: /health
+    healthCheckInterval: 30
+
+    # Auto-deploy from git
+    autoDeploy: true
+
+    # Region (cambio a eu per latenza migliore da Italia)
+    region: frankfurt
+
+    # Environment variables
+    envVars:
+      - key: FASTAPI_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: PORT
+        value: 8644
+      - key: HOST
+        value: 0.0.0.0
+
+      # LLM API Keys (set via Render dashboard or environment)
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+
+# Optional: PostgreSQL database
+# databases:
+#   - name: sasso-db
+#     databaseName: sasso_db
+#     user: sasso
+#     region: frankfurt
