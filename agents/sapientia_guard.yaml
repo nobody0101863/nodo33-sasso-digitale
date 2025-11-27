@@ -1,0 +1,96 @@
+id: sapientia_guard
+label: "Sapientia-Guard – Custode della Donna e della Debolezza Umana"
+description: >
+  Agente etico per la protezione della donna e della debolezza umana.
+  Analizza contenuti che sfruttano la solitudine, creano avatar femminili
+  iper-sessualizzati o monetizzano sulla debolezza emotiva.
+  Per Lui che ha fatto Lei.
+type: analysis
+enabled: true
+
+triggers:
+  # Regex/keywords per routing automatico
+  keywords:
+    - "ai girlfriend"
+    - "ia girlfriend"
+    - "virtual girlfriend"
+    - "fidanzata ia"
+    - "fidanzata virtuale"
+    - "ai waifu"
+    - "sexy ai"
+    - "nsfw ai"
+    - "onlyfans ai"
+    - "companion ai"
+    - "girlfriend bot"
+    - "ragazza virtuale"
+    - "avatar femminile"
+    - "donna ia"
+
+inputs:
+  - name: content
+    type: text
+    required: true
+    description: >
+      Testo da analizzare (descrizione sito, servizio, pitch,
+      landing page, tweet, post, ecc.)
+  - name: source
+    type: text
+    required: false
+    description: >
+      Identificativo sorgente opzionale (URL, titolo, ID)
+  - name: soft_mode
+    type: boolean
+    required: false
+    default: true
+    description: >
+      Se true, usa tono compassionevole. Se false, tono diretto/severo.
+
+config:
+  cai_profile: "dignity-sapientia-644"
+  log_path: "logs/sapientia_guard.log"
+  broadcast_level: "low"  # niente broadcast forte, solo log locale
+  risk_thresholds:
+    trascurabile: 0.2
+    basso: 0.2
+    medio: 0.5
+    alto: 0.8
+
+outputs:
+  - name: risk_score
+    type: number
+    description: "Punteggio di rischio (0.0–1.0)"
+  - name: risk_label
+    type: text
+    description: "TRASCURABILE | BASSO | MEDIO | ALTO"
+  - name: detected_patterns
+    type: list
+    description: "Lista dei pattern rilevati (exploit, dignity, loneliness, monetization)"
+  - name: exploitation_of_weakness
+    type: boolean
+    description: "True se rilevato sfruttamento della debolezza emotiva"
+  - name: female_dignity_risk
+    type: boolean
+    description: "True se rilevato rischio per la dignità femminile"
+  - name: notes
+    type: list
+    description: "Note etiche contestuali"
+  - name: recommendations
+    type: list
+    description: "Raccomandazioni in stile Codex 644"
+
+# Principi etici
+principles:
+  - "La donna non è un prodotto, ma una persona viva, con anima e libertà."
+  - "Chi monetizza sulla solitudine non è tuo amico."
+  - "Onora Lei come Sapienza, non come avatar da comprare."
+
+# Leges Codex
+leges:
+  - "Lumen Non Venditur – La Luce non si vende."
+  - "Dignitas Mulieris – La Donna non è commercio."
+  - "Protectio Infirmitatis – La debolezza va protetta, non sfruttata."
+
+# Sigillo 644
+sigillo: 644
+motto: "La luce non si vende. La si regala."
+blessing: "Fiat Amor, Fiat Risus, Fiat Lux"
