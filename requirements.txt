@@ -103,6 +103,7 @@ cryptography>=41.0.0
 pycryptodome>=3.19.0
 pyotp>=2.9.0  # 2FA/OTP
 qrcode>=7.4.2  # QR code generation
+slowapi>=0.1.9  # Rate limiting for FastAPI
 
 # ───────────────────────────────────────────────────────────
 # VALIDATION & PARSING

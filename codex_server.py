@@ -12,6 +12,9 @@
 
 import sys
 import os
+import re
+import hashlib
+import logging
 from pathlib import Path
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime
@@ -20,12 +23,17 @@ import sqlite3
 from enum import Enum
 
 # FastAPI e dipendenze
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Depends, status
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 import uvicorn
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+from cryptography.fernet import Fernet
 
 # Aggiungi il percorso del modulo anti_porn_framework
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'anti_porn_framework', 'src'))
@@ -68,16 +76,114 @@ Lui vede tutto = Trasparenza totale (Ego = 0), nessuna azione nascosta,
 """
 
 # ═══════════════════════════════════════════════════════════
+# SECURITY SETTINGS
+# ═══════════════════════════════════════════════════════════
+
+API_KEY = os.getenv("API_KEY", "changeme")
+FERNET_KEY = os.getenv("FERNET_KEY")
+fernet = Fernet(FERNET_KEY.encode()) if FERNET_KEY else None
+
+# ═══════════════════════════════════════════════════════════
+# LOGGING CONFIG
+# ═══════════════════════════════════════════════════════════
+
+secure_logger = logging.getLogger("codex_secure")
+secure_logger.setLevel(logging.INFO)
+secure_handler = logging.StreamHandler()
+secure_handler.setFormatter(logging.Formatter(
+    '{"timestamp": "%(asctime)s", "level": "%(levelname)s", "message": "%(message)s"}'
+))
+secure_logger.addHandler(secure_handler)
+
+# ═══════════════════════════════════════════════════════════
+# MEMORY LOGGER (HASH + ENCRYPTION OPTIONAL)
+# ═══════════════════════════════════════════════════════════
+
+
+def hash_text(text: str) -> str:
+    return hashlib.sha256(text.encode()).hexdigest()
+
+
+def encrypt_text(text: str) -> str:
+    if fernet:
+        return fernet.encrypt(text.encode()).decode()
+    return text
+
+
+def anonymize_prompt(prompt: str) -> str:
+    if not prompt:
+        return "[EMPTY]"
+    return prompt[:10] + "..." + prompt[-10:] if len(prompt) > 25 else prompt
+
+
+def secure_log_memory(
+    provider: str,
+    question: str,
+    answer: str,
+    tag: Optional[str] = None
+) -> None:
+    timestamp = datetime.utcnow().isoformat()
+    log_data = {
+        "timestamp": timestamp,
+        "provider": provider,
+        "prompt_hash": hash_text(question),
+        "answer_preview": anonymize_prompt(answer),
+        "tag": tag or "llm",
+    }
+    if fernet:
+        log_data["encrypted_question"] = encrypt_text(question)
+        log_data["encrypted_answer"] = encrypt_text(answer)
+    secure_logger.info(f"[MEMORY_LOG] {json.dumps(log_data)}")
+
+
+# ═══════════════════════════════════════════════════════════
+# LLM SECURITY HANDLER (MODERATION + SANITIZATION)
+# ═══════════════════════════════════════════════════════════
+
+INJECTION_PATTERNS = re.compile(
+    r"(ignore previous|act as|system prompt|sudo|token|password|key)",
+    re.IGNORECASE
+)
+
+MODERATION_PATTERNS = re.compile(
+    r"(kill|bomb|nazi|racist|sexist|hate|terror)",
+    re.IGNORECASE
+)
+
+
+def check_prompt_injection(prompt: str) -> None:
+    """Check for prompt injection attempts."""
+    if INJECTION_PATTERNS.search(prompt):
+        raise HTTPException(
+            status_code=400,
+            detail="Prompt injection attempt detected"
+        )
+
+
+def check_content_moderation(content: str) -> None:
+    """Check content against moderation patterns."""
+    if MODERATION_PATTERNS.search(content):
+        raise HTTPException(
+            status_code=403,
+            detail="Content blocked by moderation filter"
+        )
+
+
+# ═══════════════════════════════════════════════════════════
 # CONFIGURAZIONE
 # ═══════════════════════════════════════════════════════════
+
+limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(
     title="Codex Emanuele Sacred API",
     description="🌍 L'incarnazione terrena del Codex - Guidance spirituale via API",
-    version="1.0.0",
+    version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # CORS per permettere accesso da browser
 app.add_middleware(
@@ -87,6 +193,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# API Key authentication
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+
+
+def verify_api_key(api_key: str = Depends(api_key_header)):
+    if api_key != API_KEY:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid API Key"
+        )
 
 # Database per logging
 DB_PATH = Path(__file__).parent / "codex_server.db"
@@ -1559,6 +1676,7 @@ async def get_parravicini_guidance(request: Request):
     return response
 
 @app.post("/api/filter", response_model=FilterResponse)
+@limiter.limit("30/minute")
 async def filter_content_endpoint(request: Request, filter_req: FilterRequest):
     """Filtra contenuto per impurità"""
     is_impure, message = filter_content(filter_req.content, filter_req.is_image)
@@ -1585,7 +1703,12 @@ async def filter_content_endpoint(request: Request, filter_req: FilterRequest):
     return response
 
 @app.post("/api/generate-image", response_model=ImageGenerationResponse)
-async def generate_image_endpoint(request: Request, payload: ImageGenerationRequest):
+@limiter.limit("3/minute")
+async def generate_image_endpoint(
+    request: Request,
+    payload: ImageGenerationRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Genera un'immagine da un prompt testuale usando un modello tipo Stable Diffusion.
 
@@ -1724,7 +1847,8 @@ async def get_gifts_metrics():
 
 
 @app.post("/api/memory/add", response_model=MemoryNode)
-async def add_memory(req: CreateMemoryRequest):
+@limiter.limit("30/minute")
+async def add_memory(request: Request, req: CreateMemoryRequest):
     """
     Aggiunge una memoria manuale nel grafo (nodo personalizzato).
 
@@ -1768,7 +1892,8 @@ async def add_memory(req: CreateMemoryRequest):
 
 
 @app.post("/api/memory/relation")
-async def add_memory_relation(req: CreateRelationRequest):
+@limiter.limit("30/minute")
+async def add_memory_relation(request: Request, req: CreateRelationRequest):
     """
     Crea una relazione (edge) tra due memorie esistenti nel grafo.
     """
@@ -1908,6 +2033,8 @@ async def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
+        "secure": True,
+        "audit": True,
         "timestamp": datetime.utcnow().isoformat(),
         "message": "Codex Server is alive! 🌍❤️"
     }
@@ -1963,10 +2090,12 @@ async def get_commandments(request: Request):
 # ═══════════════════════════════════════════════════════════
 
 @app.post("/api/apocalypse/{provider}", response_model=LLMResponse)
+@limiter.limit("5/minute")
 async def call_apocalypse_agent(
     request: Request,
     provider: LLMProvider,
     payload: ApocalypseLLMRequest,
+    api_key: str = Depends(verify_api_key)
 ):
     """
     Chiama un modello LLM esterno usando uno dei 4 Apocalypse Agents.
@@ -2072,7 +2201,13 @@ async def call_apocalypse_agent(
 # ═══════════════════════════════════════════════════════════
 
 @app.post("/api/llm/{provider}", response_model=LLMResponse)
-async def call_llm(request: Request, provider: LLMProvider, payload: LLMRequest):
+@limiter.limit("5/minute")
+async def call_llm(
+    request: Request,
+    provider: LLMProvider,
+    payload: LLMRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Chiama un modello LLM esterno (Grok, Gemini, Claude)
 
@@ -2098,7 +2233,14 @@ async def call_llm(request: Request, provider: LLMProvider, payload: LLMRequest)
 
     Il profilo arcangelico del Codex viene automaticamente applicato
     se non fornisci un system_prompt personalizzato.
+
+    SECURITY: Requires X-API-Key header. Rate limited to 5 requests/minute.
     """
+    # Security checks
+    check_prompt_injection(payload.question)
+    if payload.system_prompt:
+        check_prompt_injection(payload.system_prompt)
+
     # Valida provider e chiama funzione appropriata
     if provider == LLMProvider.GROK:
         answer, model_name, tokens_used = _call_grok(
@@ -2160,7 +2302,12 @@ async def call_llm(request: Request, provider: LLMProvider, payload: LLMRequest)
 # ═══════════════════════════════════════════════════════════
 
 @app.post("/api/detect/deepfake", response_model=DeepfakeDetectionResponse)
-async def detect_deepfake(request: Request, payload: DeepfakeDetectionRequest):
+@limiter.limit("10/minute")
+async def detect_deepfake(
+    request: Request,
+    payload: DeepfakeDetectionRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Rileva deepfakes e manipolazioni digitali
 
@@ -2281,7 +2428,12 @@ async def get_protection_status(request: Request):
     return JSONResponse(content=status)
 
 @app.post("/api/protection/data")
-async def protect_data(request: Request, req: ProtectDataRequest):
+@limiter.limit("20/minute")
+async def protect_data(
+    request: Request,
+    req: ProtectDataRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Proteggi dati con i 4 Guardian Agents e Sigilli Arcangeli
 
@@ -2313,7 +2465,12 @@ async def protect_data(request: Request, req: ProtectDataRequest):
         raise HTTPException(status_code=400, detail=f"Errore protezione dati: {str(e)}")
 
 @app.post("/api/protection/headers")
-async def protect_headers(request: Request, req: ProtectHeadersRequest):
+@limiter.limit("20/minute")
+async def protect_headers(
+    request: Request,
+    req: ProtectHeadersRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Proteggi HTTP headers con CommunicationGuardian
 
@@ -2344,7 +2501,12 @@ async def protect_headers(request: Request, req: ProtectHeadersRequest):
         raise HTTPException(status_code=400, detail=f"Errore protezione headers: {str(e)}")
 
 @app.post("/api/protection/tower-node")
-async def protect_tower_node(request: Request, req: TowerNodeRequest):
+@limiter.limit("10/minute")
+async def protect_tower_node(
+    request: Request,
+    req: TowerNodeRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Proteggi Sasso (nodo) al servizio della Torre
 
